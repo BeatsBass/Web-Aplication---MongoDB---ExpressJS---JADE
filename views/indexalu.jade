@@ -1,0 +1,162 @@
+extends Adm
+block content
+  <script src="/javascripts/highcharts.js" type="text/javascript"></script>
+  div#agregar.fixed-action-btn
+    a.btn-floating.btn-large.waves-effect.waves-light.red(data-toggle="modal" data-target="#myModal13" style="background:#009688")
+      i + 
+  div.col-md-12.text-right(style="margin-top:10px;")
+    h4.text-center(style="position:absolute;font-size:1.5em") Opciones
+     strong#sub_cate.small(style="font-weight:bold") 
+    div.icon_acci
+      a.btn.btn_b
+        i.fa.fa-user.tama_ico
+    div.icon_acci
+      a.btn.btn_b
+        i.fa.fa-cog.tama_ico
+    div.icon_acci
+      a.btn.btn_b
+        i.fa.fa-search.tama_ico
+  div.row
+  //div.col-sm-8.col-sm-offset-2.col-xs-offset-0.col-xs-12
+    div.card-panel.tutuyx(style="display:none")
+      button#cierra(type="button" aria-hidden="true") &times;
+      
+      form#buscar_al(method="post", action="")
+        div.input-group.form-group.label-floating
+          label.control-label(style="transform: translateX(42px);") Buscar Alumno
+          span.input-group-addon(style="padding-left: 0px;color:#3b5998;transform: translateY(-7px);")
+              i.fa.fa-search(style="font-size:1.6em;")
+          input.search.form-control.otrocx(type="Buscar")
+        div.col-sm-12
+          div.form-group.label-floating
+            label.control-label(style="font-weight:bold") Por:
+          div.col-sm-3
+            p
+              input#filtroxx(name="optionsRadiosy" type="radio" value="0" checked="true")
+              label(for="filtroxx") Nombre
+          div.col-sm-3
+            p
+              input#filtroxx0(name="optionsRadiosy" type="radio" value="1")
+              label(for="filtroxx0") Apellidos
+          div.col-sm-3
+            p
+              input#filtroxx1(name="optionsRadiosy" type="radio" value="2")
+              label(for="filtroxx1") Género
+          div.col-sm-3
+            p
+              input#filtroxx2(name="optionsRadiosy" type="radio" value="3")
+              label(for="filtroxx2") Carrera
+        div.col-sm-12.text-center
+          input.btn.oscuro(type="submit" name="submit" value="Buscar")
+  
+  div#buscar_ui.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
+    form#buscar_al(method="post", action="")
+      div.input-group.form-group.label-floating
+        label.control-label(style="transform: translateX(42px);") Buscar Alumno
+        span.input-group-addon(style="padding-left: 0px;color:#3b5998;transform: translateY(-7px);")
+            i.fa.fa-search(style="font-size:1.6em;")
+        input.search.form-control.otroc(type="Buscar")
+      div.col-md-12
+        h4 Filtros
+      div.col-md-12
+        div.form-group.label-floating
+          label.control-label Categoría
+        div.col-md-4.col-sm-4.col-xs-6
+          p
+            input#filtroxxq(name="optionsRadioshh" type="radio" value="0" checked="true")
+            label(for="filtroxxq") Nombre
+        div.col-md-4.col-sm-4.col-xs-6
+          p
+            input#filtroxx0q(name="optionsRadioshh" type="radio" value="1")
+            label(for="filtroxx0q") Apellidos
+        div.col-md-4.col-sm-4.col-xs-6
+          p
+            input#filtroxx0qoo(name="optionsRadioshh" type="radio" value="2")
+            label(for="filtroxx0qoo") Apellido Paterno
+        div.col-md-4.col-sm-4.col-xs-6
+          p
+            input#filtroxx0qza(name="optionsRadioshh" type="radio" value="3")
+            label(for="filtroxx0qza") Apellido Materno
+        div.col-md-4.col-sm-4.col-xs-6
+          p
+            input#filtroxx1z(name="optionsRadioshh" type="radio" value="4")
+            label(for="filtroxx1z") DNI
+        div.col-md-4.col-sm-4.col-xs-6
+          p
+            input#filtroxx1j(name="optionsRadioshh" type="radio" value="5")
+            label(for="filtroxx1j") Email
+      div.row
+      div.col-md-12.text-center
+          input.btn.oscuro(type="submit" name="submit" value="Buscar")
+
+  div.col-md-12.col-xs-12
+    div.col-md-6.col-sm-6
+      h2(style="font-weight: 700;letter-spacing: -.05em;    margin-top: 0px;") Alumnos
+    div.col-md-6.col-sm-6
+      h5#busca_label.despuesxxx
+        strong Todos -
+        x(style="color:#e91e63")  Alumnos
+  br
+  br
+  br
+  div.container
+    div.row
+        div#users
+          div.col-md-12.col-xs-12
+           div#preloader(style="display:none;")
+            div#loader
+           div.table-responsive.mitable
+            -if(personal.length > 0)
+              //div.col-md-3
+              //div.col-md-6
+                //div.form-group.label-floating
+                  //label.control-label Buscar Alumno
+                  //input.search.form-control.otroc(type="Buscar")
+              //div.col-md-3
+
+              table.table
+                thead
+                  tr
+                    th.noshow Imagen
+                    th.text-center #
+                    th(style="font-size:0.85em") Apellido Paterno
+                    th(style="font-size:0.85em") Apellido Materno
+                    th Nombres
+                    th DNI
+                    th Carrera
+                      div(style="display:inline;padding:0px;margin:0px;position:relative")
+                        i.orden_table.fa.fa-caret-down.sort.waves-effect(style="cursor:pointer;margin-left: 5px;position: absolute;font-size: 26px;padding:5px;top:-7px;" data-sort="name")
+                    th.noshow @ E-mail
+                    th.text-right Acción
+                tbody.list
+                  - for (var i = 0; i < personal.length; ++i) {
+                    tr
+                      td.noshow
+                        img.modiimg(src="/avatar/#{personal[i].foto}" style="max-height:60px;")
+                      td.text-center #{i+1}
+                      td.name #{personal[i].ap}
+                      td.born #{personal[i].am}
+                      td.born #{personal[i].nombre}
+                      td.born #{personal[i].dni}
+                      -var nombrecarrera = ""; 
+                      -if(personal[i].carrera =='IN')
+                        -nombrecarrera = 'Ingenieria Informática';
+                      -else
+                        -if (personal[i].carrera == 'ARMU')
+                          -nombrecarrera = 'Artista Músico';
+                        -else
+                          -if(personal[i].carrera == 'EDAR')
+                            -nombrecarrera = 'Educación Artística';
+                          -else
+                            -nombrecarrera = personal[i].carrera;
+                      td.name #{nombrecarrera}
+                      td.noshow #{personal[i].ema}
+                      td.td-actions.text-right
+                        a.ver_al.btn.btn-info.btn-simple.btn-xs(type="button" data-toggle="modal" data-target="#myModal12" genqwMa="#{personal[i].genero}&&#{personal[i].ema}" fec_da="#{personal[i].fecha_na}&&#{personal[i].fecha_cre}&&#{personal[i].fecha_upd}" dsixz="#{personal[i]._id}") Ver
+                        a.editardocen.btn.btn-success.btn-simple.btn-xs(type="button") Editar
+                        form(method="post", action="" style="display: -webkit-inline-box;")
+                            input(type="hidden", name="_method", value="DELETE")
+                            a.btn.btn-danger.btn-simple.btn-xs.minusq(type="button" href="javascript:void(0);", onclick="if(confirm('¿Está seguro que desea eliminar este registro?')){this.parentNode.submit();}") Eliminar
+                  - }
+            -else
+              p#sindoc No existen personajes creados

@@ -1,0 +1,81 @@
+extends Adm
+block content
+  - var diassemlog = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+  - var messewlog = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  div#newseme.fixed-action-btn
+    a.btn-floating.btn-large.waves-effect.waves-light.red(data-toggle="modal" data-target="#myModal11" style="background:#009688")
+      i +
+  div.col-md-12.col-xs-12
+    div.col-md-8.col-xs-8
+      h2(style="font-weight: 700;letter-spacing: -.05em;    margin-top: 20px;") Semestres
+  br
+  br
+  br
+  div.container
+    div.row
+      div#users
+        div.col-md-12.col-xs-12
+           div.table-responsive
+             -if(logeve.length > 0)
+              //div.col-sm-8.col-sm-offset-2
+                //div.form-group.label-floating
+                  //label.control-label Buscar en el Registro Log
+                  //input.search.form-control.otroc(type="Buscar")        
+
+              table.table
+                thead
+                  tr
+                    th.text-center #
+                    th Semestre
+                    th.noshow Ingresos (S/.)
+                    th Inicio Matrículas
+                    th Fin Matrículas
+                    //th.noshow Descripción
+                    th.text-right Acción
+
+                tbody.list
+                  - for (var i = 0; i < logeve.length; ++i) {
+                    tr
+                      -if(logeve[i].activox)
+                        td.text-center.btn-info(style="background: #4caf50") #{i+1}
+                      -else
+                        td.text-center.btn-info(style="background: #000") #{i+1}
+                        
+                      - var feccq = new Date(logeve[i].configuracion.matriculas.fecha_ini);
+                      - var feccq1 = new Date(logeve[i].configuracion.matriculas.fecha_fin);
+                      - var genial = "";
+                      - var genial1 = ""; 
+                      - if (feccq.getMinutes()<10)
+                        -genial = '0'+feccq.getMinutes();
+                      - else
+                        -genial = feccq.getMinutes();
+
+                      - if (feccq.getSeconds()<10)
+                        -genial1 = '0'+feccq.getSeconds();
+                      - else
+                        -genial1 = feccq.getSeconds();
+                      - var mensajeqx = diassemlog[feccq.getDay()] +" "+feccq.getDate()+"/"+(parseInt(feccq.getMonth())+1)+"/"+feccq.getFullYear()+" "+feccq.getHours()+":"+genial+":"+genial1+" Hrs";
+
+                      - genial = "";
+                      - genial1 = ""; 
+                      - if (feccq1.getMinutes()<10)
+                        -genial = '0'+feccq1.getMinutes();
+                      - else
+                        -genial = feccq1.getMinutes();
+
+                      - if (feccq1.getSeconds()<10)
+                        -genial1 = '0'+feccq1.getSeconds();
+                      - else
+                        -genial1 = feccq1.getSeconds();
+                      - var mensajeqx1 = diassemlog[feccq1.getDay()] +" "+feccq1.getDate()+"/"+(parseInt(feccq1.getMonth())+1)+"/"+feccq1.getFullYear()+" "+feccq1.getHours()+":"+genial+":"+genial1+" Hrs";
+                      td #{logeve[i]._id}
+                      td #{logeve[i].ingresos}
+                      td #{mensajeqx}
+                      td #{mensajeqx1}
+                      td.td-actions.text-right
+                        a.verebenw.btn.btn-info.btn-simple(type="button" data-toggle="modal" data-target="#") Ver
+                        -if(logeve[i].activox)
+                          a.evedi.btn.btn-success.btn-simple(type="button" data-toggle="modal" data-target="#") Editar
+                  - }
+             -else
+              p#sindoc Sin Semestres

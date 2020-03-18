@@ -1,0 +1,84 @@
+extends Prof
+block content
+  div#agregarevent.fixed-action-btn
+    a.btn-floating.btn-large.waves-effect.waves-light.red(data-toggle="modal" data-target="#myModal1")
+      i +
+  div.col-md-12.col-xs-12
+    div.col-md-8.col-xs-8
+      h2(style="font-weight: 700;letter-spacing: -.05em;    margin-top: 20px;") Eventos y Noticias
+  div.col-md-12(style="display:none;")
+      div#mensajeErrordoc.alert.alert-danger
+  br
+  br
+  br
+  div.container
+    div.row
+        div#users
+          div.col-md-12.col-xs-12
+           div.table-responsive
+            -if(documento.eventos.length > 0)
+              div.col-md-8
+                div.form-group.label-floating
+                  label.control-label Buscar Evento
+                  input.search.form-control.otroc(type="Buscar")
+              //div.col-md-4.col-xs-12  
+                  button.btn.sort(data-sort="name" style="background:#607D8B") Por Tipo
+                  button.btn.sort(data-sort="born") Por Fecha 
+
+              table.table.font_style0
+                thead
+                  tr
+                    th Imagen
+                    th.text-center #
+                    th Título 
+                      div(style="display:inline;padding:0px;margin:0px;position:relative")
+                        i.orden_table.fa.fa-caret-down.sort.waves-effect(style="cursor:pointer;margin-left: 5px;position: absolute;font-size: 26px;padding:5px;top:-7px;" data-sort="name")
+                    th Lugar
+                    th Fecha 
+                      //div(style="display:inline;padding:0px;margin:0px;position:relative")
+                        i.orden_table.fa.fa-caret-down.sort.waves-effect(style="cursor:pointer;margin-left: 5px;position: absolute;font-size: 26px;padding:5px;top:-7px;" data-sort="born")
+                    th Tipo
+                    th.text-right Acción
+                tbody.list
+                  - for (var i = 0; i < documento.eventos.length; ++i) {
+                    tr
+                      - var filesqw = documento.eventos[i].archivo.foto +"&&"+ documento.eventos[i].archivo.file;
+                      -if(documento.eventos[i].tipo == 0)
+                        td.editpho(data-toggle="modal" data-target="#myModal3" pothow="#{documento.eventos[i].archivo.foto}" filew="#{documento.eventos[i].archivo.file}" dispow="#{documento.eventos[i].tipo}" eved ="#{documento.eventos[i]._id}" filessa="#{filesqw}")
+                          img.modiimg(src="/eventos/#{documento.eventos[i].archivo.foto}" style="max-height:60px;cursor:pointer;")
+                          -var fileadk1 = documento.eventos[i].archivo.file+"";
+                          -if(fileadk1 != 'undefined')
+                            div(style="position:absolute;height: 25px;width: 25px;background:#E91E63;z-index: 4;color:white;transform: translateY(-60px);")
+                              i.fa.fa-file(style="padding:5px;")
+                      -else
+                        td.editpho(data-toggle="modal" data-target="#myModal3" pothow="#{documento.eventos[i].archivo.foto}" filew="#{documento.eventos[i].archivo.file}" dispow="#{documento.eventos[i].tipo}" eved ="#{documento.eventos[i]._id}" filessa="#{filesqw}" style="cursor:pointer;") 
+                          img.modiimg(src="/eventos/foton.png" style="max-height:60px;cursor:pointer;")
+                          -var fileadk = documento.eventos[i].archivo.file+"";
+                          -if(fileadk != 'undefined')
+                            div(style="position:absolute;height: 25px;width: 25px;background:#E91E63;z-index: 4;color:white;background: rgba(0, 150, 136, 0.22);transform: translateY(-60px);")
+                              i.fa.fa-file(style="padding:5px;")
+                      //jode="/persona/#{personal[i]._id}"
+                      td.text-center #{i+1}
+                      td.name #{documento.eventos[i].titu}
+                      td #{documento.eventos[i].cuando.lugar}
+                      -var agregdi = documento.eventos[i].cuando.fecha+"";
+                      -if(agregdi != 'undefined')
+                        td.born #{documento.eventos[i].cuando.fecha}
+                      -else
+                        td.born
+                          a.adddi.btn.btn-success.btn-simple.btn-xs(type="button" data-toggle="modal" data-target="#myModal4" duracion="#{documento.eventos[i].duraci_noti}" eved ="#{documento.eventos[i]._id}") Agregar + Días
+                      -if(documento.eventos[i].tipo == 0)
+                        td Evento
+                      -else
+                        td Noticia
+                      td.td-actions.text-right
+                        a.verebenw.btn.btn-info.btn-simple.btn-xs(type="button" data-toggle="modal" data-target="#myModal2" dispow="#{documento.eventos[i].tipo}" descriw="#{documento.eventos[i].descri}" fechacr="#{documento.eventos[i].fecha_ini}" fechaup="#{documento.eventos[i].fecha_upd}" duracion="#{documento.eventos[i].duraci_noti}") Ver
+                        a.evedi.btn.btn-success.btn-simple.btn-xs(type="button" eved ="#{documento.eventos[i]._id}" dispow="#{documento.eventos[i].tipo}" descriw="#{documento.eventos[i].descri}" data-toggle="modal" data-target="#myModal1") Editar
+                        form(method="post", action="/EveNoProf/#{documento.eventos[i]._id}" style="display: -webkit-inline-box;")
+                            input(type="hidden", name="_method", value="DELETE")
+                            - var archifw = documento.eventos[i].archivo.foto +"&&"+ documento.eventos[i].archivo.file;
+                            input(style="display:none" name="archivowf" value="#{archifw}")
+                            a.btn.btn-danger.btn-simple.btn-xs(type="button" href="javascript:void(0);", onclick="if(confirm('¿Está seguro que desea eliminar este registro?')){this.parentNode.submit();}") Eliminar
+                  - }
+            -else
+              p#sineventos No hay documentos

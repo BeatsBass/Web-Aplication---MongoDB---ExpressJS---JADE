@@ -1,0 +1,59 @@
+extends Adm
+block content
+  -var categoxx = ['Piano','Clarinete','Violin','S'];
+  div#agregar.fixed-action-btn
+    a.btn-floating.btn-large.waves-effect.waves-light.red(data-toggle="modal" data-target="#myModal8")
+      i +
+  div.col-md-12
+    a.btn.btn-success(href="/admi")
+      i.fa.fa-arrow-left
+      //x Atrás
+  div.col-md-12.col-xs-12
+    div.col-md-8.col-xs-8
+      h2 Asignaturas
+  br
+  br
+  br
+  div.container
+    div.row
+        div#users
+          div.col-md-12.col-xs-12
+           div.table-responsive
+            -if(personal.length > 0)
+              div.col-md-3
+              div.col-md-6
+                div.form-group.label-floating
+                  label.control-label Buscar Profesor
+                  input.search.form-control.otroc(type="Buscar")
+              div.col-md-3
+
+              table.table
+                thead
+                  tr
+                    th Imagen
+                    th.text-center #
+                    th Nombres
+                    th.nosfo Apellidos
+                    th.nosfo @ E-mail
+                    th.nosfo Categoria
+                    th.text-right Acción
+                tbody.list
+                  - for (var i = 0; i < personal.length; ++i) {
+                    tr
+                      td
+                        img.modiimg(src="/avatar/#{personal[i].foto}" style="max-height:60px;cursor:pointer;" data-toggle="modal" data-target="#myModal200" mioqw="#{personal[i]._id}")
+                      td.text-center #{i+1}
+                      td.name.jaert #{personal[i].nombre}
+                      td.born.nosfo #{personal[i].apellidos}
+                      td.nosfo #{personal[i].ema}
+                      -var cualqw =categoxx[personal[i].categoria];
+                      td.nosfo #{cualqw}
+                      td.td-actions.text-right
+                        a.ver.btn.btn-info.btn-simple.btn-xs.minusq(type="button" genqwMa="#{personal[i].genero}&&#{personal[i].ema}&&#{personal[i].categoria}" redqw="#{personal[i].redes}" descqw="#{personal[i].descri}" ima="#{personal[i].foto}" data-toggle="modal" data-target="#myModal2") Ver
+                        a.editardocen.btn.btn-success.btn-simple.btn-xs.minusq(type="button" dni="#{personal[i]._id}" data-toggle="modal" data-target="#myModal3") Editar
+                        form(method="post", action="/personal/#{personal[i]._id}" style="display: -webkit-inline-box;")
+                            input(type="hidden", name="_method", value="DELETE")
+                            a.btn.btn-danger.btn-simple.btn-xs.minusq(type="button" href="javascript:void(0);", onclick="if(confirm('¿Está seguro que desea eliminar este registro?')){this.parentNode.submit();}") Eliminar
+                  - }
+            -else
+              p#sindoc No existen personajes creados

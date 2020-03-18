@@ -1,0 +1,46 @@
+extends Alum
+block content
+    div.col-md-12.col-xs-12
+        -var nombrecarrera = ""; 
+        -if(user.tipoalumno.carrera =='IN')
+            -nombrecarrera = 'Ingenieria Informática';
+        -else
+            -if (user.tipoalumno.carrera == 'ARMU')
+                -nombrecarrera = 'Artista Músico';
+            -else
+                -if(user.tipoalumno.carrera == 'EDAR')
+                    -nombrecarrera = 'Educación Artística';
+                -else
+                    -nombrecarrera = "Ingenieria Informática";
+        div.col-md-12
+          h5#busca_label.despuesxxx.label_alu
+            strong #{nombrecarrera} 
+            x(style="color:#E91E63") - 
+            x(style="color:#E91E63;font-size:14.5px") Crts
+            x(style="font-weight:bold") #{user.tipoalumno.creditos + 12}
+        div.col-md-12
+            h2.titulo_al Panel de Inicio
+            p Bienvenido alumno 
+                strong #{final} :
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            h5
+                strong Email - Password
+            p Toda información será enviando al siguiente correo: 
+                i.fa.fa-envelope(style="margin-right:4px")
+                strong #{user.local.email}.   
+                x Para la modificación de Email y/o Password vaya al apartado 
+                    strong(style="background:#3b5998;padding-left:5px;padding-right:5px;color:white;font-weight:normal;padding-top:3px;padding-bottom:3px;background: linear-gradient(to left,#51165a,#283a47);")
+                        i.fa.fa-cogs(style="margin-right:4px")
+                        x Configuración       
+
+        div.col-md-12
+            h4
+                strong Redes Sociales
+            p Conectar su cuenta de 
+                strong(style="background:#3b5998;padding-left:5px;padding-right:5px;color:white") Facebook
+                x  al sistema mejora la experiencia del usuario. Desde Facebook Messenger podrá realizar consultas (creditos /notas /eventos) y recibir comunicados, noticias y tares.
+            span.btn.btn-facebook(style="padding: 10px 10px;")
+                i.fa.fa-facebook(style="font-size:1,8em")
+                x(style="text-transform:capitalize;color:white;padding-left:5px;font-size:1em") Conectar con Facebook
+    

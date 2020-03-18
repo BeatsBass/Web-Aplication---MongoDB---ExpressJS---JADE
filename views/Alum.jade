@@ -1,0 +1,76 @@
+doctype html
+html
+  head
+    title= title
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/material-kit.css">
+    //<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome2.min.css">
+    <link rel="stylesheet" href="/fonts/fontawesome-webfont.woff2">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/mar.css">
+    <script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+  body
+    nav.navbar.navbar_miesti(role="navigation" style="margin-bottom: 0px; z-index: 100;")
+                div.container
+                    div.navbar-header
+                        button.navbar-toggle(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+                            span.sr-only Toggle navigati
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                    div#bs-example-navbar-collapse-1.collapse.navbar-collapse
+                        ul.nav.navbar-nav.navbar-right(style="padding: 0px 20px;")
+                            li
+                                a(style="cursor:pointer" href="/admi")
+                                    i.fa.fa-circle-o 
+                                    x(style="text-transform:none;") Inicio
+                            li.dropdown
+                                a.dropdown-toggle(href="#" data-toggle="dropdown" style="text-transform:none;") Académico  
+                                    b.caret
+                                ul.dropdown-menu
+                                  li.miqtt
+                                    a.waves-effect.waves-teal.color_la(href="/docc" style="padding-left: 10px;")
+                                        x Notas
+                                  
+                                  li.miqtt
+                                    a.waves-effect.waves-teal.color_la(href="/requisito" style="padding-left: 10px;") 
+                                        x Matricula   
+                            li
+                                a(style="cursor:pointer" data-toggle="modal" data-target="#myModal5" colores="#{user._id}")
+                                    i.fa.fa-cogs 
+                                    x(style="text-transform:none;") Configuración
+                            li
+                                a(href="/chart" style="cursor:pointer" colores="#{user._id}")
+                                    i.fa.fa-line-chart 
+                                    //x(style="text-transform:none;") Resumen Académico 
+                            li
+                                a(style="cursor:pointer" href="/logout")
+                                    i.fa.fa-sign-out
+                                    //x(style="text-transform:none;") Salir 
+                    div.chip.card-raised(style="position: absolute;top: 9px;background:rgba(255,255,255,0.05)" )
+                        //a(style="color: rgba(0, 0, 0, 0.6);" href="#")
+                        //img(src="avatar/#{user.local.foto}")
+                        div.holaqwd(style="background-image:url(avatar/#{user.local.foto});background-size:cover;background-position:center;")
+                        - var si = user.local.nombre.split("&&");
+                        - var final = si[0]+" "+si[1];
+                        x(style="text-transform: capitalize;color:rgba(255,255,255,.9);") #{final}
+
+    div.main(style="padding-bottom:20px;")
+        div.container
+            div.row
+                block content
+    br
+    footer.footer
+        div.container
+            div.row
+                div.col-md-12.text-center
+                    -var hola = new Date();
+                    -var hola_y = hola.getFullYear();
+                    x © #{hola} Leandro Alviña. All rights reserved.
+    <script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+    <script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/javascripts/material.min.js" type="text/javascript"></script>
+    <script src="/javascripts/material-kit.js" type="text/javascript"></script>
+    <script src="/javascripts/materialize.js" type="text/javascript"></script>
+    //<script src="/javascripts/obtendata4.js" type="text/javascript"></script>

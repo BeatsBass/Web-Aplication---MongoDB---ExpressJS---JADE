@@ -1,0 +1,59 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p#hola
+
+  button.jajaja(type="button") Upload File
+  input#upload-input(type="file" name="uploads[]" multiple="multiple")
+  br
+  br
+  br
+  br
+  form(enctype="multipart/form-data" action="/upload" method="post")
+    input(type="file" name="photo")
+    input(type="submit" value="Upload Image" name="submit")
+    input(type="text", name="apellido", value="")
+
+  form(method="post", action="/hola")
+    label Categoria
+          div.radio
+              label
+                  input(type="radio" name="optionsRadios" checked="true" value="0")
+                  Radio is off
+          div.radio
+              label
+                  input(type="radio" name="optionsRadios" value="1")
+                  Radio is on
+          div.radio
+              label
+                  input(type="radio" name="optionsRadios" value="2")
+                  Radio is off
+          div.radio
+              label
+                  input(type="radio" name="optionsRadios" value="3")
+                  Radio is off
+    input(type="submit", value="Guardar")
+
+  div.contain
+      svg(height='80' width='210')
+        ellipse(cx='25' cy='20' fill='none' rx='10' ry='10')
+      svg(height='80' width='210')
+        ellipse(cx='25' cy='20' fill='none' rx='10' ry='10')
+      svg(height='80' width='210')
+        ellipse(cx='25' cy='20' fill='none' rx='10' ry='10')
+      svg(height='80' width='210')
+        ellipse(cx='25' cy='20' fill='none' rx='10' ry='10')
+      svg(height='80' width='210')
+        ellipse(cx='25' cy='20' fill='none' rx='10' ry='10')
+      svg(height='80' width='210')
+        ellipse(cx='25' cy='20' fill='none' rx='10' ry='10')
+      svg(height='80' width='210')
+        ellipse(cx='25' cy='20' fill='none' rx='10' ry='10')
+      svg(height='80' width='210')
+        ellipse(cx='25' cy='20' fill='none' rx='10' ry='10')
+      svg(height='80' width='210')
+        ellipse(cx='25' cy='20' fill='none' rx='10' ry='10')
+      svg(height='80' width='210')
+        ellipse(cx='25' cy='20' fill='none' rx='10' ry='10')

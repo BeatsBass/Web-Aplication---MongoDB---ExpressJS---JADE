@@ -1,0 +1,16 @@
+extends Adm
+block content
+ form(method="post", action="/api/authenticate")
+      div.content
+            div.row
+              div.col-sm-12
+                  div.form-group.label-floating
+                          label.control-label Nombre
+                          input.form-control.otroc(name="name" required="required" value="")
+              div.col-sm-12
+                  div.form-group.label-floating
+                          label.control-label password
+                          input.form-control.otroc(name="password" required="required" value="")
+      div.footer.text-center
+            input.btn.oscuro(type="submit" value="Guardar")
+            a.btn.btn-danger(href="/personal") Cancelar

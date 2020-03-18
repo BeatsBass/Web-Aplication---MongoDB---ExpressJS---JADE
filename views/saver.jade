@@ -1,0 +1,30 @@
+extends layout
+block content
+  h1 Guardar Cabezera
+  form(method="post", action="#{action}")
+    -if(put)
+      input(type="hidden", name="_method", value="PUT")
+    textarea(name="requisito", cols="50", rows="5", required="required") #{personaje.descri}
+    br
+    label Tipo Admision
+        -if(personaje.tipo == 0)
+          div.radio
+            label
+                input(type="radio" name="optionsRadios" checked="true" value="0")
+                x Regular
+          div.radio
+            label
+                input(type="radio" name="optionsRadios" value="1")
+                x Exonerado
+        -else
+          div.radio
+            label
+                input(type="radio" name="optionsRadios" value="0")
+                x Regular
+          div.radio
+            label
+                input(type="radio" name="optionsRadios" checked="true" value="1")
+                x Exonerado
+    br
+    input(type="submit", value="Guardar")
+    a(href="/requisito") Cancelar

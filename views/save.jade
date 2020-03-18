@@ -1,0 +1,30 @@
+extends Adm
+block content
+  div.col-md-12
+    a.btn.btn-success(href="/cabeza")
+      x << Atras
+  div.modal-header
+    h4.modal-title.texto4.text-center Modificar Cabezera
+  div.modal-body
+    form(method="post", action="#{action}")
+      -if(put)
+        input(type="hidden", name="_method", value="PUT")
+      div.content
+        div.row
+          div.col-sm-12
+            div.col-sm-6
+              label.control-label Institución
+              textarea.form-control.otroc(placeholder="Escriba la descripción" rows="26" name="institucion" required="required") #{personaje.insti}
+            div.col-sm-6
+              div.col-sm-12
+                label.control-label Visión
+                textarea.form-control.otroc(placeholder="Escriba la descripción" rows="6" name="vision" required="required") #{personaje.visi}
+              div.col-sm-12
+                label.control-label Misión
+                textarea.form-control.otroc(placeholder="Escriba la descripción" rows="6" name="mision" required="required") #{personaje.misi}
+              div.col-sm-12
+                label.control-label Historia
+                textarea.form-control.otroc(placeholder="Escriba la descripción" rows="5" name="historia" required="required") #{personaje.histo}
+      div.footer.text-center
+        input.btn.oscuro(type="submit" value="Guardar")
+        a.btn.btn-danger(href="/cabeza") Cancelar

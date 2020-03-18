@@ -1,0 +1,67 @@
+extends Adm
+block content
+  div#agregarrequi.fixed-action-btn
+    a.btn-floating.btn-large.waves-effect.waves-light.red(data-toggle="modal" data-target="#myModal50" style="background:#009688")
+      i +
+  div.col-md-12.col-xs-12
+    div.col-md-8.col-xs-8
+      h2(style="font-weight: 700;letter-spacing: -.05em;    margin-top: 20px;") Documentos Requisistos
+  br
+  br
+  br
+  div.container
+    div.row
+      div#users
+        div.col-md-12.col-xs-12
+           div.table-responsive
+             -if(requisito.length > 0)
+              div.col-md-1.col-xs-0
+              div.col-md-6
+                div.form-group.label-floating
+                  label.control-label Buscar Requisito
+                  input.search.form-control.otroc(type="Buscar")     
+
+              table.table
+                thead
+                  tr
+                    th.text-center #
+                    th Requisito
+                      div(style="display:inline;padding:0px;margin:0px;position:relative")
+                        i.orden_table.fa.fa-caret-down.sort.waves-effect(style="cursor:pointer;margin-left: 5px;position: absolute;font-size: 26px;padding:5px;top:-7px;" data-sort="name")
+                    th Tipo
+                      div(style="display:inline;padding:0px;margin:0px;position:relative")
+                        i.orden_table.fa.fa-caret-down.sort.waves-effect(style="cursor:pointer;margin-left: 5px;position: absolute;font-size: 26px;padding:5px;top:-7px;" data-sort="born")
+                    th
+                    th  
+                    th Acción
+
+                tbody.list
+                  - for (var i = 0; i < requisito.length; ++i) {
+                    tr
+                      -if(requisito[i].tipo==0)
+                        td.text-center.btn-info(style="background: #546e7a;") #{i+1}
+                      -else
+                        td.text-center.btn-success(style="background:#37474f;") #{i+1}
+                      - var hola = requisito[i].descri;
+                      - var arrahola = hola.split(" ");
+                      -if(arrahola.length > 10)
+                        td.name #{arrahola[0]+" "+arrahola[1]+" "+arrahola[2]+" "+arrahola[3]+" "+arrahola[4]+" "+arrahola[5]+" "+arrahola[6]+" "+arrahola[7]+" "+arrahola[8]+" "+arrahola[9]+"..."}
+                      -else
+                        td.name #{hola}
+                      td.born
+                        -if(requisito[i].tipo==0)
+                          x Regular
+                        -else
+                          x Exonerado
+
+                      td 
+                        a.btn.btn-info.btn-simple.verrequi.btn-xs(joder="/requisit/#{requisito[i]._id}" data-toggle="modal" data-target="#myModal60"  style="margin:0px;padding-bottom: 3px;padding-top: 3px;padding-right:4px;padding-left:4px") Ver
+                      td 
+                        a.btn.btn-success.btn-simple.editarrequi.btn-xs(joder="/requisit/#{requisito[i]._id}/edit" style="margin:0px;padding-bottom: 3px;padding-top: 3px;padding-right:4px;padding-left:4px" data-toggle="modal" data-target="#myModal100") Editar
+                      td
+                        form(method="post", action="/requisito/#{requisito[i]._id}")
+                          input(type="hidden", name="_method", value="DELETE")
+                          a.btn.btn-danger.btn-simple.btn-xs(href="javascript:void(0);" style="margin:0px;padding-bottom: 3px;padding-top: 3px; padding-right:4px;padding-left:4px", onclick="if(confirm('¿Está seguro que desea eliminar este registro?')){this.parentNode.submit();}") Eliminar
+                  - }
+             -else
+              p requisito vacio

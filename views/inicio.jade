@@ -1,0 +1,29 @@
+extends Adm
+block content
+  div.col-md-12
+    a.btn.btn-success(href="/admi")
+      x << Atras
+  div.col-md-12.col-xs-12
+    div.col-md-8.col-xs-8
+      h1 Cabezera
+  div.col-md-12.text-right
+    a.btn.oscuro.btn-round(href="/cabeza/#{cabeza[0]._id}/edit") Editar
+  br
+  br
+  br
+  div.container
+    div.row
+      div.col-md-12
+        div.col-md-6
+          label(style="font-weight:bold; color:rgba(233, 30, 99, 0.55);") Mision 
+          p #{cabeza[0].misi}
+        div.col-md-6
+          label(style="font-weight:bold; color:rgba(233, 30, 99, 0.55);") Visión
+          p #{cabeza[0].visi}
+      br
+      div.col-md-12
+        div.col-md-12
+          label(style="font-weight:bold; color:rgba(233, 30, 99, 0.55);") Historia
+          p #{cabeza[0].insti}
+  br
+  br

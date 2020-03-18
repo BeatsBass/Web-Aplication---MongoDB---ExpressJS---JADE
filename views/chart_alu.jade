@@ -1,0 +1,22 @@
+extends Alum
+block content
+	<script src="/javascripts/obtendata4chart.js" type="text/javascript"></script>
+	<script src="/javascripts/highcharts.js" type="text/javascript"></script>
+	-var array1 = new Array();
+	-var array2 = new Array();
+	- for (var i = 0; i < data.length; ++i) {
+		-array1 [i] = data[i].semestre;
+		-array2 [i] = data[i].promedio;
+	- }
+	span#midatxy(data_chartx="#{array1}" data_charty="#{array2}" style="display:none")
+	div.col-md-12
+		h2.titulo_al(style="margin-bottom:20px;font-size:2.1em") Estadísticas 
+			i.fa.fa-line-chart
+		div.col-md-12(style="margin-bottom:30px;")
+			div#grafico_chart(style="margin-top:0px;")
+		div.col-md-6
+			div#grafico_chart2(style="margin-top:0px;")
+		div.col-md-6
+			div#grafico_chart3(style="margin-top:0px;")
+		//div.col-md-6
+			div#grafico_chart4(style="margin-top:0px;")

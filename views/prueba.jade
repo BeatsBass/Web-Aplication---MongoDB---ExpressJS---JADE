@@ -1,0 +1,267 @@
+doctype html
+html
+  head
+    title= ISM
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/landing.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/landingstroke.css" rel="stylesheet">
+
+  body.landing-page.landing-page1
+        nav.navbar.navbar-transparent.navbar-top(role="navigation")
+            div.container
+                div.navbar-header
+                    button#menu-toggle(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example" aria-expanded="false")
+                        span.sr-only Toggle navigation
+                        span.icon-bar.bar1 
+                        span.icon-bar.bar2 
+                        span.icon-bar.bar3 
+                    a
+                        div.logo-container
+                            div.logo
+                                img(src="/avatar/12.jpg" alt="Creative Tim Logo")
+                            div.brand Creative Tim
+                div#example.navbar-collapse.collapse(aria-expanded="false" style="height: 1px;")
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(style="cursor:pointer" data-toggle="modal" data-target="#myModal11")
+                                i.fa.fa-facebook-square  
+                                x Like
+                        li
+                            a
+                                i.fa.fa-twitter
+                                x Tweet
+                        li
+                            a
+                                i.fa.fa-pinterest
+                                x Pin
+                        li.dropdown-toggle
+                                a.dropdown-toggle(href="#" data-toggle="dropdown" style="text-transform:none;") Institución  
+                                    b.caret
+                                ul.dropdown-menu
+                                  li.miqtt
+                                    a(href="/docc" style="padding-left: 10px;")
+                                        x Archivos
+                                  //li.divider
+                                  li.miqtt
+                                    a(href="/requisito" style="padding-left: 10px;") 
+                                        x Requisitos
+                                  //li.divider
+                                  li.miqtt
+                                    a(href="/personal" style="padding-left: 10px;") 
+                                        x Plana Docente
+                                  li.miqtt
+                                    a(href="/alumnos" style="padding-left: 10px;") 
+                                        x Alumnos
+                                  //li.divider
+                                  li.miqtt
+                                    a(href="/semestre" style="padding-left: 10px;") 
+                                        x Semestres
+                                  //li.divider
+                                  li.miqtt
+                                    a(href="/logevent" style="padding-left: 10px;") 
+                                        x Log
+
+
+
+        div.wrapper
+            div.parallax.filter-gradient.blue(data-color="blue")
+                div.parallax-background
+                    img.parallax-background-image(src="/images/image14.jpg" style="margin-top: 0px;")
+                div.container
+                    div.row
+                        div.col-md-5.col-sm-5.hidden-xs
+                            div.parallax-image
+                                img.phone(src="/images/130956通常盤.jpg" style="margin-top: 20px")
+                        div.col-md-6.col-md-offset-1.col-sm-6.col-sm-offset-1
+                            div.description
+                                h2 Awesome landing page
+                                br
+                                h5 Be amazed by the best looking bootstrap landing page on the web! Your new app deserves an amazing page to show all of its features. Clear visual, light colours and beautifully aligned elements - they all try to make the users aware of your great app features!
+                            div.buttons
+                                button.btn.btn-fill.btn-neutral
+                                    i.fa.fa-apple Appstore
+                                button.btn.btn-simple.btn-neutral
+                                    i.fa.fa-android
+                                button.btn.btn-simple.btn-neutral
+                                    i.fa.fa-windows
+            div.section.section-gray.section-clients
+                div.container.text-center
+                    h4.header-text Friends in high places
+                    p Build customer confidence by listing your users! Anyone who has used your service and has been pleased with it should have a place here! From Fortune 500 to start-ups, all your app enthusiasts will be glad to be featured in this section. Moreover, users will feel confident seing someone vouching for your product!
+                    br
+                    div.logos
+                        ul.list-unstyled
+                            li 
+                                img(src="")
+                            li 
+                                img(src="")
+                            li 
+                                img(src="")
+                            li 
+                                img(src="")
+                            li 
+                                img(src="")
+                            li 
+                                img(src="")
+            div.section.section-presentation
+                div.container
+                    div.row
+                        div.col-md-6.col-sm-6
+                            div.description
+                                h4.header-text It's beautiful
+                                p And your app is also probably social, awesome, easy-to-use and vital to users. This is the place to enlist all the good things that your app has to share. Focus on the benefits that the uers will receive. Try to combine imaginery with text and show meaningful printscreens from your app, that will make it clear what exactly the basic functions are.
+                                p Try to make it very clear for the people browsing the page that this product will enrich their life and will make a nice addition to the homescreen.
+                                p
+                        div.col-md-5.col-md-offset-1.col-sm-5.col-sm-offset-1.hidden-xs
+                            img(src="/avatar/12.jpg")
+            div.section.section-demo
+                div.container
+                    div.row
+                        div.col-md-6
+                            div#description-carousel.carousel.fade(data-ride="carousel")
+                                div.carousel-inner
+                                    div.item
+                                        img(src="/images/130956通常盤.jpg" alt="")
+                                    div.item.active
+                                        img(src="/avatar/12.jpg" alt="")
+                                    div.item
+                                        img(src="/images/130956通常盤.jpg" alt="")
+                                ol.carousel-indicators.carousel-indicators-blue
+                                    li(data-target="#description-carousel" data-slide-to="0" class="")
+                                    li(data-target="#description-carousel" data-slide-to="1" class="active")
+                                    li(data-target="#description-carousel" data-slide-to="2" class="")
+
+                        div.col-md-5.col-md-offset-1
+                            h4.header-text Easy to integrate
+                            p With all the apps that users love! Make it easy for users to share, like, post and tweet their favourite things from the app. Be sure to let users know they continue to remain connected while using your app!
+                            a#Demo3.btn.btn-fill.btn-info(data-button="info") Get Free Demo
+            div.section.section-features
+                div.container
+                    h4.header-text.text-center Features
+                    div.row
+                        div.col-md-4.col-sm-4
+                            div.card.card-blue
+                                div.icon
+                                    i.pe-7s-note2
+                                div.text
+                                    h4 Online Customers Management
+                                    p All appointments sync with your Google calendar so your availability is always up to date. See your schedule at a glance from any device.
+                        div.col-md-4.col-sm-4
+                            div.card.card-blue
+                                div.icon
+                                    i.pe-7s-bell
+                                
+                                h4 Smart Notifications on hands
+                                p Automatic text and email reminders make sure customers always remember their upcoming appointments.
+                        div.col-md-4.col-sm-4
+                            div.card.card-blue
+                                div.icon
+                                    i.pe-7s-graph1
+                                
+                                h4 Know your business better now
+                                p Take payments and run your business on the go, in your store and then see how it all adds up with analytics.
+
+            div.section.section-testimonial
+                div.container
+                    i.pe-7s-rocket(style="font-size:3em")
+                    i.pe-7s-way(style="font-size:3em")
+                    i.pe-7s-paperclip(style="font-size:3em")
+                    i.pe-7s-info(style="font-size:3em")
+                    i.pe-7s-help1(style="font-size:3em")
+                    h4.header-text.text-center What people think
+                    div#carousel-example-generic.carousel.fade(data-ride="carousel")
+                        div.carousel-inner(role="listbox")
+                            div.item
+                                div.mask
+                                    img(src="/avatar/12.jpg")
+                                div.carousel-testimonial-caption
+                                    p Jay Z, Producer
+                                    h3 I absolutely love your app! It's truly amazing and looks awesome!
+                            div.item.active
+                                div.mask
+                                    img(src="/images/130956通常盤.jpg")
+                                div.carousel-testimonial-caption
+                                    p Drake, Artist
+                                    h3 "This is one of the most awesome apps I've ever seen! Wish you luck Creative Tim!
+                            div.item
+                                div.mask
+                                    img(src="/images/130956通常盤.jpg")
+                                div.carousel-testimonial-caption
+                                    p Rick Ross, Musician
+                                    h3 "Loving this! Just picked it up the other day. Thank you for the work you put into this.
+                        ol.carousel-indicators.carousel-indicators-blue
+                            li(data-target="#carousel-example-generic" data-slide-to="0" class="")
+                            li(data-target="#carousel-example-generic" data-slide-to="1" class="active")
+                            li(data-target="#carousel-example-generic" data-slide-to="2" class="")
+
+            div.section.section-no-padding
+                div.parallax.filter-gradient.blue(data-color="blue")
+                    div.parallax-background
+                        img.parallax-background-image(src="/avatar/12.jpg")
+                    div.info
+                        h1 Download this landing page for free
+                        p Beautiful multipurpose bootstrap landing page.
+                        a.btn.btn-neutral.btn-lg.btn-fill DOWNLOAD
+            footer.footer
+                div.container
+                    nav.pull-left
+                        ul
+                            li
+                                a Home
+                            li
+                                a Home
+                            li
+                                a Home
+                            li
+                                a Home
+                    div.social-area.pull-right
+                        a.btn.btn-social.btn-facebook.btn-simple
+                            i.fa.fa-facebook-square
+                        a.btn.btn-social.btn-twitter.btn-simple
+                            i.fa.fa-twitter
+                        a.btn.btn-social.btn-twitter.btn-simple
+                            i.fa.fa-twitter
+                    div.copyright © 2016 
+                        a Creative Tim, 
+                        x made with love
+
+        div.fixed-plugin
+            div.dropdown
+                a(href="#" data-toggle="dropdown" aria-expanded="false")
+                    i.fa.fa-cog.fa-2x
+                ul.dropdown-menu
+                    li.header-title Adjustments
+                    li.adjustments-line
+                        a.switch-trigger(href="javascript:void(0)")
+                            p.pull-right Filter
+                            div.pull-left
+                                span.badge.selector.badge-blue.active(data-color="blue" data-button="info")
+                                span.badge.selector.badge-green(data-color="green" data-button="success")
+                                span.badge.selector.badge-orange(data-color="orange" data-button="warning")
+                                span.badge.selector.badge-red(data-color="red" data-button="danger")
+                                span.badge.selector.badge-black(data-color="gray" data-button="default")
+                            div.clearfix
+                    li.header-title Template
+                    li.active
+                        a.switch(href="/landing-page")
+                            img(src="/images/130956通常盤.jpg")
+                            p.pull-left Awesome Landing Page
+                    li.header-title Showcases
+                    li
+                        a.switch(href="/landing-page-showcase-1")
+                            img(src="/images/130956通常盤.jpg")
+                            p.pull-left Showcase 1
+                    li
+                        a.switch(href="/landing-page-showcase-2")
+                            img(src="/images/130956通常盤.jpg")
+                            p.pull-left Showcase 2
+
+        <script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+        <script src="/javascripts/bootstrap.js" type="text/javascript"></script>   
+        <script src="/javascripts/jqueryui.js" type="text/javascript"></script>
+        <script src="/javascripts/landing.js" type="text/javascript"></script>

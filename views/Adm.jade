@@ -1,0 +1,1108 @@
+doctype html
+html
+  head
+    title= title
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/material-kit.css">
+    //<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome2.min.css">
+    <link rel="stylesheet" href="/fonts/fontawesome-webfont.woff2">
+
+    //<link rel="stylesheet" type="text/css" href="/stylesheets/mies.css">
+    //<link rel="stylesheet" type="text/css" href="/stylesheets/estilo.css">
+
+    //<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/mar.css">
+    <script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+    <script src ="/javascripts/angular.min.js" type="text/javascript"></script>
+    <script src ="/javascripts/date.js" type="text/javascript"></script>
+  body
+    //div#index-banner.parallax-container.header-filter
+        div.row
+            nav.navbar.navbar-transparent(role="navigation" style="margin-bottom: 0px; z-index: 100;")
+                div.container
+                    div.navbar-header
+                        button.navbar-toggle(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+                            span.sr-only Toggle navigati
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                    div#bs-example-navbar-collapse-1.collapse.navbar-collapse
+                        ul.nav.navbar-nav.navbar-right(style="    padding: 0px 20px;")
+                            li
+                                a.waves-effect.waves-teal(href="/admi")
+                                    i.fa.fa-circle-o  
+                                    x(style="text-transform:none;") Inicio
+                            //li
+                                a.waves-effect.waves-teal(href="/personal")
+                                    x(style="text-transform:none;") Plana Docente
+                            //li
+                                    a.waves-effect.waves-teal(href="/docc")
+                                        x(style="text-transform:none;") Archivos
+                            //li
+                                    a.waves-effect.waves-teal(href="/requisito") 
+                                        x(style="text-transform:none;") Requisitos
+                            li
+                                a#sett_user.waves-effect.waves-teal(href="/logout")
+                                    i.fa.fa-cogs 
+                                    x(style="text-transform:none;") Configuración
+
+                            li.dropdown
+                                a.dropdown-toggle(href="#" data-toggle="dropdown" style="text-transform:none;") Institución  
+                                    b.caret
+                                ul.dropdown-menu
+                                  li.miqtt
+                                    a.waves-effect.waves-teal.color_la(href="/docc" style="padding-left: 10px;")
+                                        x Archivos
+                                  //li.divider
+                                  li.miqtt
+                                    a.waves-effect.waves-teal.color_la(href="/requisito" style="padding-left: 10px;") 
+                                        x Requisitos
+                                  //li.divider
+                                  li.miqtt
+                                    a.waves-effect.waves-teal.color_la(href="/personal" style="padding-left: 10px;") 
+                                        x Plana Docente
+                                  li.miqtt
+                                    a.waves-effect(href="/alumnos" style="padding-left: 10px;") 
+                                        x Alumnos
+                                  //li.divider
+                                  li.miqtt
+                                    a.waves-effect.waves-teal.color_la(href="/semestre" style="padding-left: 10px;") 
+                                        x Semestres
+                                  //li.divider
+                                  li.miqtt
+                                    a.waves-effect.waves-teal.color_la(href="/logevent" style="padding-left: 10px;") 
+                                        x Log
+                            li
+                                a.waves-effect.waves-teal(href="/logout")
+                                    i.fa.fa-sign-out
+                                    x(style="text-transform:none;") Salir
+        div.section.no-pad-bot
+            div.container
+                br
+                br
+                h1.header.center.teal-text.text-center 
+                    x LEANDRO ALVIÑA MIRANDA
+                div.row.text-center
+                    h5.header.col.s12.ight.texto4 ADMINISTRACIÓN
+
+        div.parallax1
+            img.otxyz(src="/images/f2.png" ,alt="Unsplashed background img 1")
+
+    nav.navbar.navbar_miesti2(role="navigation" style="margin-bottom: 0px; z-index: 100;")
+                div.container
+                    div.navbar-header
+                        button.navbar-toggle(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+                            span.sr-only Toggle navigati
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                    div#bs-example-navbar-collapse-1.collapse.navbar-collapse
+                        ul.nav.navbar-nav.navbar-right(style="    padding: 0px 20px;")
+                            li
+                                a(href="/admi")
+                                    i.fa.fa-circle-o  
+                                    x(style="text-transform:none;") Inicio
+                            //li
+                                a.waves-effect.waves-teal(href="/personal")
+                                    x(style="text-transform:none;") Plana Docente
+                            //li
+                                    a.waves-effect.waves-teal(href="/docc")
+                                        x(style="text-transform:none;") Archivos
+                            //li
+                                    a.waves-effect.waves-teal(href="/requisito") 
+                                        x(style="text-transform:none;") Requisitos
+                            li
+                                a#sett_user(href="/logout")
+                                    i.fa.fa-cogs 
+                                    x(style="text-transform:none;") Configuración
+
+                            li.dropdown
+                                a.dropdown-toggle(href="#" data-toggle="dropdown" style="text-transform:none;") Institución  
+                                    b.caret
+                                ul.dropdown-menu
+                                  li.miqtt
+                                    a(href="/docc" style="padding-left: 10px;")
+                                        x Archivos
+                                  //li.divider
+                                  li.miqtt
+                                    a(href="/requisito" style="padding-left: 10px;") 
+                                        x Requisitos
+                                  //li.divider
+                                  li.miqtt
+                                    a(href="/personal" style="padding-left: 10px;") 
+                                        x Plana Docente
+                                  li.miqtt
+                                    a(href="/alumnos" style="padding-left: 10px;") 
+                                        x Alumnos
+                                  //li.divider
+                                  li.miqtt
+                                    a(href="/semestre" style="padding-left: 10px;") 
+                                        x Semestres
+                                  //li.divider
+                                  li.miqtt
+                                    a(href="/logevent" style="padding-left: 10px;") 
+                                        x Log
+                            li
+                                a(href="/logout")
+                                    i.fa.fa-sign-out
+                                    x(style="text-transform:none;")
+                    div.chip.card-raised(style="position: absolute;top: 9px;background:rgba(255,255,255,0.05)" )
+                        //div.holaqwd(style="background-image:url(avatar/#{user.local.foto});background-size:cover;background-position:center;")
+                        x(style="text-transform: capitalize;color:rgba(255,255,255,.9);") Administrador
+    
+    //Modal Log
+    div#myModal4.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content(style="border-radius: 0;")
+                div.modal-header.cabezamia(style="background:#424242;")
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2em;color:white") &times;
+                    h5(style="top: 6px;position: absolute;font-size: 1em;background: #00BCD4;padding: 8px;color: #ffffff;border-radius: 27px;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);")
+                        i.fa.fa-user-circle(style="padding-right:5px;")
+                        x Clarin
+                div.modal-body
+                    h4.modal-title.text-center(style="font-weight:bold;font-size:1.5em") II Seminario Internacional de Trompeta y Trombón Yamaha
+                    div.row
+                        div.col-md-12
+                            div.col-sm-12
+                                h5.small Descripción
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
+                        div.col-md-12
+                            div.col-sm-12.text-center
+                                i.fa.fa-clock-o(style="transform: translate(2px,1px);font-size: 1.6em;")
+                                x(style="margin-left:5px;")
+                        br
+
+    //Modal para nuevo documento
+    div#myModal999.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2em;") &times;
+                    h4.modal-title.text-center.texto4 Agregar Documento
+                div.modal-body
+                      form#pruprudocc(method="post", action="" enctype="multipart/form-data")
+                        div.content
+                            div.row
+                                div.col-sm-3.col-xs-3
+                                        img#mostrardocc.img-responsive(src='/documentos/file.jpg')
+                                div.file-field.input-field
+                                    div.btn1
+                                        span File
+                                        input#imagendocc(type="file" name="photo")
+                                    div.file-path-wrapper
+                                        input.file-path.validate(type="text")
+                            div.col-sm-12
+                                div.form-group.label-floating
+                                    h5.control-label Tipo
+                                div.col-sm-3
+                                    p
+                                        input#tipo0(name="optionsRadios1" type="radio" checked value="0")
+                                        label(for="tipo0") Cronograma
+                                div.col-sm-3
+                                    p
+                                        input#tipo1(name="optionsRadios1" type="radio" value="1")
+                                        label(for="tipo1") Vacantes
+                                div.col-sm-3
+                                    p
+                                        input#tipo2(name="optionsRadios1" type="radio" value="2")
+                                        label(for="tipo2") Prospecto
+                                div.col-sm-3
+                                    p
+                                        input#tipo3(name="optionsRadios1" type="radio" value="3")
+                                        label(for="tipo3") Balotario
+                                div.col-sm-12
+                                    div#alerta.alert.alert-danger.text-center(style="font-weight:bold;") Error, complete el formulario!
+                            //div.col-sm-12
+                                div.col-sm-12
+                                    h5 Tipo
+                                div.col-sm-3
+                                    div.radio
+                                        label
+                                            input#tipo0(type="radio" name="optionsRadios1" checked="true" value="0")
+                                            x#lala0(style="color:#000000;") Cronograma
+                                div.col-sm-3
+                                    div.radio
+                                        label
+                                            input#tipo1(type="radio" name="optionsRadios1" value="1")
+                                            x#lala1(style="color:#000000;") Vacantes
+                                div.col-sm-3
+                                    div.radio
+                                        label
+                                            input#tipo2(type="radio" name="optionsRadios1" value="2")
+                                            x#lala2(style="color:#000000;") Prospecto
+                                div.col-sm-3
+                                    div.radio
+                                        label
+                                            input#tipo3(type="radio" name="optionsRadios1" value="3")
+                                            x#lala3(style="color:#000000;") Balotario
+                                div.col-sm-12
+                                    div#alerta.alert.alert-danger.text-center(style="font-weight:bold;") Error, complete el formulario!
+                        div.footer.text-center
+                            input#filtrodocc.btn.oscuro.sinaccion(type="submit" name="submit" value="ENVIAR")
+                            button.btn.btn-danger(type="button" data-dismiss="modal") Cancelar
+
+    
+    //Modal para ver documento
+    div#myModalevent.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content(style="background: rgba(0,0,0,0); color:white;box-shadow:none;")
+                div.modal-body 
+                    div.row
+                        button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2em;") &times;
+                        h4#titutudocc.modal-title.text-center.texto4 Agregar Profesor
+                        div.col-xs-12
+                            //div.chip.nombre(style="background-color: rgba(0,0,0,0);color: white;")
+                                //a(style="color: rgba(0, 0, 0, 0.6);" href="#")
+                                img(src="avatar/mujer.png")
+                                //div.holaqwd(style="background-image:url(avatar/mujer.png);background-size:cover;background-position:center;")
+                                x(style="text-transform: capitalize;") Jojhan Fernandez
+                            div.col-sm-12
+                                h5.text-center.small.tiempxx(style="color:rgba(255, 255, 255, 0.73);") Última actualización 30/3/2017 a las 12:52:33 am
+                        div.col-xs-12.card2.text-center(style="background:rgba(0,0,0,0);box-shadow:none;margin-top:0px;")
+                            img#mostrardocc1(src="images/12.jpg")
+                            a#booo.btn.text-center.btn-info(target="_blank" style="display:none;background:#009688;") Ver Pdf
+
+
+    //Modal para editar documento
+    div#myModal31.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2em;") &times;
+                    h4.modal-title.texto4.text-center Editar
+                        br
+                        h5#nombredit.text-center(style="color:rgba(60, 72, 88, 0.73);")
+                div.modal-body
+                    form#modificadocc(method="post", action="" enctype="multipart/form-data")
+                        div.content
+                            div.row
+                                div.col-sm-12
+                                    div.col-sm-2.col-xs-1
+                                    div.col-sm-8.col-xs-10
+                                        img#editdocc.img-responsive.showimg(src='/avatar/12.jpg')
+                            br
+                            div.row
+                                div.col-sm-12.text-center
+                                    a#boooedit.btn.text-center.btn-success(target="_blank" style="display:none;") Ver Pdf
+
+                                div.col-sm-12
+                                 div.file-field.input-field
+                                    div.btn1
+                                        span File
+                                        input#imagen1e(type="file" name="photo1")
+                                    div.file-path-wrapper
+                                        input.file-path.validate(type="text")
+                                div.col-sm-12
+                                    h5#Fechha.text-center.small(style="color:rgba(60, 72, 88, 0.73);") hola
+                                input#tipppo(style="display:none;" type="text")
+                            //div.row
+                                div.col-sm-8.col-md-8.col-sm-offset-3
+                                    input#imagen1.btn.btn-info(type="file" name="photo1" style="padding: 10px 14px;")
+                            div.col-sm-12
+                                    div#alertaedit.alert.alert-danger.text-center(style="font-weight:bold;") Error, complete el formulario!
+                        br
+                        div.footer.text-center
+                            input#filtroe.btn.oscuro.sinaccion(type="submit" name="submit" value="ENVIAR")
+                            button.btn.btn-danger(type="button" data-dismiss="modal") Cancelar
+
+    //Modal requisitos
+    div#myModal100.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2em;") &times;
+                    h4.modal-title.texto4 Modificar Requisito
+                div.modal-body
+                      form#RequiiiUpda(method="post", action="")
+                        input(type="hidden", name="_method", value="PUT")
+                        div.content
+                            div.col-sm-6
+                                div.col-sm-12
+                                    label(style="font-weight:bold; color:rgba(233, 30, 99, 0.55);") Requisito
+                                textarea#updatere.form-control.otroc(placeholder="Escriba la descripción" rows="5" name="requisito" required="required")    
+                            div.col-sm-6
+                                div.col-sm-12
+                                    label(style="font-weight:bold; color:rgba(233, 30, 99, 0.55);") Categoria
+                                div.col-sm-12
+                                    p
+                                        input#tipo0qwfq(name="optionsRadios" type="radio" value="0")
+                                        label(for="tipo0qwfq") Regular
+                                div.col-sm-12
+                                    p
+                                        input#tipo1qwfq(name="optionsRadios" type="radio" value="1")
+                                        label(for="tipo1qwfq") Primeros Puestos
+                                div.col-sm-12
+                                    p
+                                        input#tipo2qwfq(name="optionsRadios" type="radio" value="2")
+                                        label(for="tipo2qwfq") Discapacidad
+                                div.col-sm-12
+                                    p
+                                        input#tipo3qwf(name="optionsRadios" type="radio" value="3")
+                                        label(for="tipo3qwfq") Titulados 
+                            //div.col-sm-6
+                                div.col-sm-12
+                                    label(style="font-weight:bold; color:rgba(233, 30, 99, 0.55);") Categoria
+                                div.col-sm-12
+                                    div.radio
+                                        label
+                                            input(type="radio" name="optionsRadios" value="0")
+                                            x Regular
+                                div.col-sm-12
+                                    div.radio
+                                        label
+                                            input(type="radio" name="optionsRadios" value="1")
+                                            x Primeros Puestos
+                                div.col-sm-12
+                                    div.radio
+                                        label
+                                            input(type="radio" name="optionsRadios" value="2")
+                                            x Discapacidad
+                                div.col-sm-12
+                                    div.radio
+                                        label
+                                            input(type="radio" name="optionsRadios" value="3")
+                                            x Titulados
+                        br
+                        br
+                        div.footer.text-center
+                            input.btn.oscuro(type="submit" name="submit" value="ENVIAR")
+
+    //Modal requisitos
+    div#myModal50.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2em;") &times;
+                    h4.modal-title.texto4 Nuevo Requisito
+                div.modal-body
+                      form#Requiii(method="post", action="")
+                        div.content
+                            div.col-sm-6
+                                div.col-sm-12
+                                    label(style="font-weight:bold; color:rgba(233, 30, 99, 0.55);") Requisito
+                                textarea.form-control.otroc(placeholder="Escriba la descripción" rows="5" name="requisito" required="required")   
+                            div.col-sm-6
+                                div.col-sm-12
+                                    label(style="font-weight:bold; color:rgba(233, 30, 99, 0.55);") Categoria
+                                div.col-sm-12
+                                    p
+                                        input#tipo0qwf(name="optionsRadios" type="radio" checked value="0")
+                                        label(for="tipo0qwf") Regular
+                                div.col-sm-12
+                                    p
+                                        input#tipo1qwf(name="optionsRadios" type="radio" value="1")
+                                        label(for="tipo1qwf") Primeros Puestos
+                                div.col-sm-12
+                                    p
+                                        input#tipo2qwf(name="optionsRadios" type="radio" value="2")
+                                        label(for="tipo2qwf") Discapacidad
+                                div.col-sm-12
+                                    p
+                                        input#tipo3qwf(name="optionsRadios" type="radio" value="3")
+                                        label(for="tipo3qwf") Titulados 
+                            //div.col-sm-6
+                                div.col-sm-12
+                                    label(style="font-weight:bold; color:rgba(233, 30, 99, 0.55);") Categoria
+                                div.col-sm-12
+                                    div.radio
+                                        label
+                                            input(type="radio" name="optionsRadios" checked="true" value="0")
+                                            x Regular
+                                div.col-sm-12
+                                    div.radio
+                                        label
+                                            input(type="radio" name="optionsRadios" value="1")
+                                            x Primeros Puestos
+                                div.col-sm-12
+                                    div.radio
+                                        label
+                                            input(type="radio" name="optionsRadios" value="2")
+                                            x Discapacidad
+                                div.col-sm-12
+                                    div.radio
+                                        label
+                                            input(type="radio" name="optionsRadios" value="3")
+                                            x Titulados
+                        br
+                        br
+                        div.footer.text-center
+                            input.btn.oscuro(type="submit" name="submit" value="ENVIAR")
+
+    //Modal requisitos
+    div#myModal60.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2em;") &times;
+                    h4#reqqqqi.modal-title.texto4 Requisito
+                div.modal-body
+                      form#Requiii1(method="post", action="")
+                        div.content
+                            div.col-sm-6
+                                div.col-sm-12
+                                    label(style="font-weight:bold; color:rgba(233, 30, 99, 0.55);") Requisito
+                                textarea#Remera.form-control.otroc(placeholder="Escriba la descripción" rows="5" name="requisito" required="required" disabled=true )    
+                            div.col-sm-6
+                                div.col-sm-12
+                                    label(style="font-weight:bold; color:rgba(233, 30, 99, 0.55);") Categoria
+                                div.col-sm-12
+                                    div.radio
+                                        label
+                                            input(type="radio" name="optionsRadios" value="0" disabled=true)
+                                            x Regular
+                                div.col-sm-12
+                                    div.radio
+                                        label
+                                            input(type="radio" name="optionsRadios" value="1" disabled=true)
+                                            x Primeros Puestos
+                                div.col-sm-12
+                                    div.radio
+                                        label
+                                            input(type="radio" name="optionsRadios" value="2" disabled=true)
+                                            x Discapacidad
+                                div.col-sm-12
+                                    div.radio
+                                        label
+                                            input(type="radio" name="optionsRadios" value="3" disabled=true)
+                                            x Titulados 
+                        br
+                        br
+                div.modal-footer
+                    button.btn.btn-info.btn-simple(type="button" data-dismiss="modal") Cerrar
+
+    //Modal editar image profesor
+    div#myModal200.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2.2em;") &times;
+                    h4.modal-title.texto4.text-center(style="font-size:1.7em") Modifica Imagen
+                        br
+                        h5#nombreee.text-center(style="color:rgba(60, 72, 88, 0.73);")
+                div.modal-body(style="padding-top: 0px;")
+                    form#modificaimg(method="post", action="" enctype="multipart/form-data")
+                        div.content
+                            div.row
+                                div.col-sm-4
+                                    img#mostrar2.img-responsive.showimg(src='/avatar/12.jpg')
+                                br
+                                div.col-sm-8
+                                    div.file-field.input-field
+                                        div.btn1
+                                            span Foto
+                                            input#imagen1(type="file" name="photo1")
+                                        div.file-path-wrapper
+                                            input.file-path.validate(type="text")
+                                div.col-sm-12(style="margin-top:10px;")
+                                    div#alertimage.alert.alert-danger.text-center(style="display:none;padding: 10px 0px;") Error!! Archivo no permitido. Seleccione solo archivo tipo imagen.
+                                    div#alertimageinfo.alert.alert-success.text-center(style="display:none;padding: 10px 0px;") Error!! Archivo no permitido. Seleccione solo archivo tipo imagen.
+                        br
+                        div#piescss.footer.text-center
+                            input#filtro.btn.oscuro.sinaccion(style="padding-left:15px;padding-right:15px;" type="submit" name="submit" value="ENVIAR")
+                            button.btn.btn-danger(style="padding-left:15px;padding-right:15px;" type="button" data-dismiss="modal") Cancelar
+
+    //Modal editar profesor
+    div#myModal3.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content(style="border-radius: 0;")
+                div.modal-header.cabezamia(style="background:#009688")
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2em;color:white;") &times;
+                    div.card-raised(style="background-image: url(/avatar/12.jpg);background-size: cover;background-position: center;height: 100px;width:100px;text-align: center;margin: -35px 0px;")
+                div.modal-body
+                      br
+                      h4#titudoce.modal-title.text-center.uniq(style="font-weight:bold;font-size:1.4em") II Seminario Internacional de Trompeta y Trombón Yamaha
+                      div.col-sm-12(style="margin-top:10px;")
+                        div#alertainfo.alert.alert-success.text-center(style="font-weight:bold;padding: 10px 15px;") Para restaurar los valores solo cierre esta ventana o haga click en CANCELAR.
+                      form#editdocen(method="post", action="/personal/" )
+                        input(type="hidden", name="_method", value="PUT")
+                        div.content
+                            br
+                            div.col-sm-6
+                                div.form-group.label-floating
+                                    label.control-label Nombres
+                                    input.form-control.otroc.valiz(name="nombre" value='hola')
+                            div.col-sm-6
+                                div.form-group.label-floating
+                                    label.control-label Apellido
+                                    input.form-control.otroc.valiz(name="apellido" value='hola')
+                            div.col-sm-12
+                                div.form-group(style="margin-top:-5px;")
+                                    label.control-label(style="font-weight:bold;") Descripción
+                                    textarea.valiz.form-control.otroc(placeholder="Escriba la descripción" rows="6" name="historia" )
+                            div.col-sm-12(style="padding-left:0px;padding-right:0px;")
+                                div.col-sm-6
+                                    div.form-group.label-floating
+                                        label.control-label E-mail
+                                        input.form-control.otroc.valiz(name="ema" value='hola') 
+                                div.col-sm-6
+                                    div.form-group.label-floating
+                                        label.control-label Género
+                                    div.col-sm-6
+                                        p
+                                            input#edittest11(name="grupogenero" type="radio" value="0")
+                                            label(for="edittest11") Masculino
+                                    div.col-sm-6
+                                        p
+                                            input#edittest21(name="grupogenero" type="radio" value="1")
+                                            label(for="edittest21") Femenino
+                            div.row
+                            div.col-md-12
+                                h4 Datos Académicos
+                            div.col-sm-12
+                                div.form-group.label-floating
+                                    label.control-label Categoría
+                                div.col-sm-3
+                                    p
+                                        input#edittest110(name="optionsRadios" type="radio" value="0")
+                                        label(for="edittest110") Piano
+                                div.col-sm-3
+                                    p
+                                        input#edittest210(name="optionsRadios" type="radio" value="1")
+                                        label(for="edittest210") Clarinete
+                                div.col-sm-3
+                                    p
+                                        input#edittest310(name="optionsRadios" type="radio" value="2")
+                                        label(for="edittest310") Violin
+                                div.col-sm-3
+                                    p
+                                        input#edittest410(name="optionsRadios" type="radio" value="3")
+                                        label(for="edittest410") S
+
+                            div.col-sm-12
+                                div.form-group.label-floating
+                                    label.control-label Redes Sociales
+                                div.col-sm-12(style="padding-left:0px;")
+                                    div.col-sm-4
+                                        div.input-group.form-group.label-floating
+                                            label.control-label(style="transform: translateX(22px);") Facebook
+                                            span.input-group-addon(style="padding-left: 0px;color:#3b5998;transform: translateY(-7px);")
+                                                i.fa.fa-facebook
+                                            input.form-control.otroc.valiz(name="face" value='hola')
+
+                                        //div.form-group.label-floating
+                                            label.control-label Facebook
+                                            input.form-control.otroc.valiz(name="face" value='hola')
+                                    div.col-sm-4
+                                        div.input-group.form-group.label-floating
+                                            label.control-label(style="transform: translateX(32px);") Google +
+                                            span.input-group-addon(style="padding-left: 0px;color:#dd4b39;transform: translateY(-7px);")
+                                                i.fa.fa-google-plus
+                                            input.form-control.otroc.valiz(name="goo" value='hola')
+                                        //div.form-group.label-floating
+                                            label.control-label Google +
+                                            input.form-control.otroc.valiz(name="goo" value='hola')
+                                    div.col-sm-4
+                                        div.input-group.form-group.label-floating
+                                            label.control-label(style="transform: translateX(22px);") Twiter
+                                            span.input-group-addon(style="padding-left: 0px;color:#55acee;transform: translateY(-7px);")
+                                                i.fa.fa-twitter
+                                            input.form-control.otroc.valiz(name="twwi" value='hola')
+                                        //div.form-group.label-floating
+                                            label.control-label Twiter
+                                            input.form-control.otroc.valiz(name="twwi" value='hola')
+                            div.col-sm-12(style="margin-top:10px;")
+                                div#alertaedit.alert.alert-danger.text-center(style="display:none;font-weight:bold;") Complete el Formulario (Falta los elementos de color rojo) !
+                        div.footer.text-center
+                            input#filtrodoce.btn.oscuro(type="submit" name="submit" value="ENVIAR")
+                            button.btn.btn-danger(type="button" data-dismiss="modal") Cancelar
+
+    //Modal nuevo profesor
+    div#myModal8.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2em;") &times;
+                    h4.modal-title.text-center.texto4 Agregar Profesor
+                div.modal-body
+                      form#prupru(method="post", action="/personal/" enctype="multipart/form-data")
+                        div.content
+                            div.row
+                                div.col-sm-3.col-xs-3
+                                        img#mostrar1.img-responsive(src='/avatar/hombre.png')
+                                div.file-field.input-field
+                                    div.btn1
+                                        span Foto
+                                        input#imagen(type="file" name="pho")
+                                    div.file-path-wrapper
+                                        input#nombrefil.file-path.validate(type="text")
+                                div.col-sm-12(style="margin-top:10px;")
+                                    div#alerta2.alert.alert-danger.text-center(style="display:none;font-weight:bold;") Error!! Archivo no válido
+                            br
+                            div.col-sm-6
+                                div.form-group.label-floating
+                                    label.control-label Nombres
+                                    input.form-control.otroc.valiz(name="nombre" value='hola')
+                            div.col-sm-6
+                                div.form-group.label-floating
+                                    label.control-label Apellido
+                                    input.form-control.otroc.valiz(name="apellido" value='hola')
+                            div.col-sm-12
+                                div.form-group
+                                    label.control-label(style="font-weight:bold;") Descripción
+                                    textarea.valiz.form-control.otroc(placeholder="Escriba la descripción" rows="4" name="historia" )
+                            div.col-sm-12(style="padding-left:0px;padding-right:0px;")
+                                div.col-sm-6
+                                    div.form-group.label-floating
+                                        label.control-label E-mail
+                                        input.form-control.otroc.valiz(name="ema" value='hola') 
+                                div.col-sm-6
+                                    div.form-group.label-floating
+                                        label.control-label Género
+                                    div.col-sm-6
+                                        p
+                                            input#test11(name="grupogenero" checked type="radio" value="0")
+                                            label(for="test11") Masculino
+                                    div.col-sm-6
+                                        p
+                                            input#test21(name="grupogenero" type="radio" value="1")
+                                            label(for="test21") Femenino
+                            div.row
+                            div.col-md-12
+                                h4 Datos Académicos
+                            div.col-sm-12
+                                div.form-group.label-floating
+                                    label.control-label Categoría
+                                div.col-sm-3
+                                    p
+                                        input#test110(name="optionsRadios" checked="true" type="radio" value="0")
+                                        label(for="test110") Piano
+                                div.col-sm-3
+                                    p
+                                        input#test210(name="optionsRadios" type="radio" value="1")
+                                        label(for="test210") Clarinete
+                                div.col-sm-3
+                                    p
+                                        input#test310(name="optionsRadios" type="radio" value="2")
+                                        label(for="test310") Violin
+                                div.col-sm-3
+                                    p
+                                        input#test410(name="optionsRadios" type="radio" value="3")
+                                        label(for="test410") S
+
+                            div.col-sm-12
+                                div.form-group.label-floating
+                                    label.control-label Redes Sociales
+                                div.col-sm-12
+                                    div.col-sm-4
+                                        div.form-group.label-floating
+                                            label.control-label Facebook
+                                            input.form-control.otroc.valiz(name="face" value='hola')
+                                    div.col-sm-4
+                                        div.form-group.label-floating
+                                            label.control-label Google +
+                                            input.form-control.otroc.valiz(name="goo" value='hola')
+                                    div.col-sm-4
+                                        div.form-group.label-floating
+                                            label.control-label Twiter
+                                            input.form-control.otroc.valiz(name="twwi" value='hola')
+                            div.col-sm-12(style="margin-top:10px;")
+                                div#alerta.alert.alert-danger.text-center(style="display:none;font-weight:bold;") Complete el Formulario (Falta los elementos de color rojo) !
+                                div#alertauser.alert.alert-danger.text-center(style="display:none;font-weight:bold;") ⚠ Error !! Usuario ya existe.
+                        div.footer.text-center
+                            input#filtro1.btn.oscuro(type="submit" name="submit" value="ENVIAR")
+                            button.btn.btn-danger(type="button" data-dismiss="modal") Cancelar
+  
+    //Modal ver profesor
+    div#myModal2.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content(style="border-radius: 0;")
+                div.modal-header.cabezamia
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2em;color:white") &times;
+                    div(style="background-image: url(/avatar/12.jpg);background-size: cover;background-position: center;height: 100px;width:100px;text-align: center;margin: -35px 0px;")
+                    h5.tiiq(style="position: absolute;right: 30px;font-size: 1em;background: rgb(38, 50, 56);padding: 5px;border-radius: 7px;color: #FFEB3B;")
+                        i.fa.fa-music(style="padding-right:5px;")
+                        x Clarin 🎹
+                div.modal-body
+                    h4#titutu.modal-title.text-center.uniq(style="font-weight:bold;font-size:1.5em") II Seminario Internacional de Trompeta y Trombón Yamaha
+                    div.row
+                        h5.jqwe(style="text-transform:none;font-size:1.1em;margin-bottom: 0px;text-align: center;font-weight: bold;color: #009688;") Información
+                        div.col-md-12
+                            //h5(style="text-transform:none;font-size:1.1em;margin-bottom: 0px;") Datos Académicos
+                            div.col-sm-12
+                                h5.small Descripción
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
+                        div.col-md-12
+                            div.col-sm-12.text-center
+                                i.fa.fa-envelope-open
+                                br
+                                x(style="margin-left:5px;") jjj@hotmail.com
+                            div.col-md-12.minusq.text-center
+                                a.btn.btn-just-icon.btn-twitter(href="" target="_blank")
+                                    i.fa.fa-twitter
+                                a.btn.btn-just-icon.btn-facebook(href="" target="_blank")
+                                    i.fa.fa-facebook
+                                a.btn.btn-just-icon.btn-google(href="" target="_blank")
+                                    i.fa.fa-google
+
+    //Modal nuevo semestre
+    div#myModal11.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2em;") &times;
+                    h4.modal-title.text-center.texto4 Agregar Semestre
+                div.modal-body
+                    div.app-container(style="display:none;" ng-app="dateTimeApp" ng-controller="dateTimeCtrl as ctrl" ng-cloak)
+                                    div.hio(aria-hidden="true")
+                                        a#atrasseme.jaja4
+                                            i.fa.fa-arrow-left
+                                    div(date-picker datepicker-title="Selecciona la Fecha" picktime="true" pickdate="true" pickpast="false" mondayfirst="false" custom-message="Elegiste" selecteddate="ctrl.selected_date" updatefn="ctrl.updateDate(newdate)")
+                                        div.datepicker.compact(ng-class="{'am': timeframe == 'am','pm': timeframe == 'pm','compact': compact}")
+                                            div.datepicker-header
+                                                div.datepicker-title(ng-if="datepicker_title") {{ datepickerTitle }}
+                                                div.datepicker-subheader {{ customMessage }} {{ selectedDay }} {{ localdate.getDate() }} {{monthNames[localdate.getMonth()] }} de {{ localdate.getFullYear() }}, a las {{ edittime.formatted }}
+                                                div#midato(jala="{{ localdate.getFullYear() }}-{{monthNames[localdate.getMonth()] }}-{{ localdate.getDate() }} {{ edittime.formatted }}")
+                                            div.datepicker-calendar
+                                                div.calendar-header
+                                                    div.goback(ng-click="moveBack()" ng-if="pickdate")
+                                                        svg(width="30" height="30")
+                                                            path(fill="none" stroke="#0DAD83" stroke-width="3" d="M19,6 l-9,9 l9,9")
+                                                    div.current-month-container {{ currentViewDate.getFullYear() }} {{ currentMonthName() }}
+                                                    div.goforward(ng-click="moveForward()" ng-if="pickdate")
+                                                        svg(width="30" height="30")
+                                                            path(fill="none" stroke="#0DAD83" stroke-width="3" d="M11,6 l9,9 l-9,9")
+                                                div.calendar-day-header
+                                                    span(ng-repeat="day in days" class="day-label") {{ day.short }})
+                                                div.calendar-grid(ng-class="{false: 'no-hover'}[pickdate]")
+                                                    div.datecontainer(ng-class="{'no-hover': !day.showday}" ng-repeat="day in month" ng-style="{'margin-left': calcOffset(day, $index)}" track by $index)
+                                                        div.datenumber(ng-class="{'day-selected': day.selected }" ng-click="selectDate(day)") {{ day.daydate }}
+                                            div.timepicker(ng-if="picktime == 'true'")
+                                                div(ng-class="{'am': timeframe == 'am', 'pm': timeframe == 'pm' }")
+                                                    div.timepicker-container-outer(selectedtime="time" timetravel)
+                                                        div.timepicker-container-inner
+                                                            div.timeline-container(ng-mousedown="timeSelectStart($event)" sm-touchstart="timeSelectStart($event)")
+                                                                div.current-time
+                                                                    div.actual-time {{ time }}
+                                                                div.timeline
+                                                                div.hours-container
+                                                                    div.hour-mark(ng-repeat="hour in getHours() track by $index")
+                                                            div.display-time
+                                                                div.decrement-time(ng-click="adjustTime('decrease')")
+                                                                    svg(width="24" height="24")
+                                                                        path(stroke="white" stroke-width="2" d="M8,12 h8")
+                                                                div.time(ng-class="{'time-active': edittime.active}")
+                                                                    input.time-input(type="text" ng-model="edittime.input" ng-keydown="changeInputTime($event)" ng-focus="edittime.active = true; edittime.digits = [];" ng-blur="edittime.active = false")
+                                                                    div.formatted-time {{ edittime.formatted }}
+                                                                div.increment-time(ng-click="adjustTime('increase')")
+                                                                    svg(width="24" height="24")
+                                                                        path(stroke="white" stroke-width="2" d="M12,7 v10 M7,12 h10")
+                                                            div.am-pm-container
+                                                                div.am-pm-button(ng-click="changetime('am');") am 
+                                                                div.am-pm-button(ng-click="changetime('pm');") pm 
+                                            
+                                            //div.buttons-container 
+                                                div.atrras.cancel-button CANCEL
+                                                div.save-button Guardar
+                    div#errornews.col-sm-12(style="margin-top:10px;")
+                        div.alert.alert-danger.text-center(style="display:none;font-weight:bold;") ERROR no puede crear nuevo semestre.
+                    div.row
+                        div#semini.col-sm-12
+                            div.alert.alert-info.text-center(style="background-color:#263238")
+                             p Para crear un nuevo semestre se tiene las siguientes consideraciones:
+                                br
+                                x(style="margin-top:10px;padding-left:10px;font-size:13px;") El  
+                                    strong(style="color:#FFEB3B;") 1° semestre 
+                                        x del año es admitido solo en el mes de 
+                                        strong Marzo.
+                                br
+                                x(style="padding-left:10px;font-size:13px;") El 
+                                    strong(style="color:#FFEB3B;") 2° semestre 
+                                        x del año es admitido solo en el mes de 
+                                        strong Agosto.
+                                br
+                                x(style="padding-left:10px;font-size:13px;") Si es el 
+                                    strong(style="color:#FFEB3B;") 1° semestre en el sistema 
+                                        x se puede crear en cualquier fecha
+                                br
+                                x tenga en cuenta que la fecha será tomada para generar los otros semestres.
+                            div.col-sm-12(style="margin-top:10px;")
+                                div.alert.alert-danger.text-center(style="") Al crear un nuevo semestre el último semestre queda inactivo y toda proceso queda cerrado.
+                            div.col-sm-12.text-center
+                                button#agregarsemest.btn.oscuro(type="button" ) Crear
+                                button.btn.btn-danger(type="button" data-dismiss="modal") Cancelar
+
+
+                    form#nuevosem(method="post", action="/semestre" style="display:none;")
+                        input#cual_semestre(type="hidden" name="cual_semestre" value="0")
+                        div.content
+                            div.col-sm-12
+                                div.form-group.label-floating
+                                    label.control-label Costo/Crédito
+                                    input.form-control.otroc.valiz(name="costo" value='10' type='Number')
+                            div.row
+                            div.col-md-12
+                                h4 Matrículas
+                                //input(type="hidden" name="matri_camb" value="0")
+                            div.col-sm-12.matricull
+                                div.col-sm-6
+                                    div.form-group.label-floating
+                                        label.control-label Inicio
+                                        //v1
+                                        //input.fechaini.form-control.otroc.valiz(name="matri_ini" value='hola')
+                                        //v2
+                                        h3.fechaini.form-control.otroc(name="fecha")
+                                        input.form-control.otroc.valiz(name="matri_ini" value='hola' style="display:none;")
+                                div.col-sm-6
+                                    div.form-group.label-floating
+                                        label.control-label Fin
+                                        //v1
+                                        //input.fechaini.form-control.otroc.valiz(name="matri_fin" value='hola')
+                                        //v2
+                                        h3.fechaini.form-control.otroc.finn(name="fecha" segundo="0")
+                                        input.form-control.otroc.valiz(name="matri_fin" value='hola' style="display:none;")
+                            div.col-sm-12
+                                h4 Notas
+                                input#con_notas(type="hidden" name="con_notas" value="0")
+                                div.alert.alert-info.text-center(style="font-weight:bold;background-color:#009688;") Puede modificar más tarde este apartado o hacerlo ahora mismo
+                                span#masnotas.btn(style="border-radius: 100%;height: 40px;width: 40px;padding: 0px;padding-top: 4px;font-size: 22px;font-weight: 900;background:#607D8B") + 
+                                h4#masnotas1(style="display: inline-block;margin-left: 10px;color: #607D8B;font-weight: bold;font-size:14px;") Modificar
+
+                                div#notas.col-sm-12.notq(style="display:none")
+                                    div.col-sm-12
+                                        h4.small Nota 1
+                                        //input(type="hidden" name="nota1_camb" value="0")
+                                        div.col-sm-6
+                                            div.form-group.label-floating
+                                                label.control-label Inicio
+                                                h3.fechaini.form-control.otroc
+                                                input.form-control.otroc(name="nota1_ini" value='hola' style="display:none;")
+                                        div.col-sm-6
+                                            div.form-group.label-floating
+                                                label.control-label Fin
+                                                h3.fechaini.form-control.otroc.finn(segundo="0")
+                                                input.form-control.otroc(name="nota1_fin" value='hola' style="display:none;")
+                                    div.col-sm-12
+                                        h4.small Nota 2
+                                        //input(type="hidden" name="nota2_camb" value="0")
+                                        div.col-sm-6
+                                            div.form-group.label-floating
+                                                label.control-label Inicio
+                                                h3.fechaini.form-control.otroc
+                                                input.form-control.otroc(name="nota2_ini" value='hola' style="display:none;")
+                                        div.col-sm-6
+                                            div.form-group.label-floating
+                                                label.control-label Fin
+                                                h3.fechaini.form-control.otroc.finn(segundo="0")
+                                                input.form-control.otroc(name="nota2_fin" value='hola' style="display:none;")
+                                    div.col-sm-12
+                                        h4.small Nota 3
+                                        //input(type="hidden" name="nota3_camb" value="0")
+                                        div.col-sm-6
+                                            div.form-group.label-floating
+                                                label.control-label Inicio
+                                                h3.fechaini.form-control.otroc
+                                                input.form-control.otroc(name="nota3_ini" value='hola' style="display:none;")
+                                        div.col-sm-6
+                                            div.form-group.label-floating
+                                                label.control-label Fin
+                                                h3.fechaini.form-control.otroc.finn(segundo="0")
+                                                input.form-control.otroc(name="nota3_fin" value='hola' style="display:none;")
+                                    div.col-sm-12
+                                        h4.small Nota Sustitutorio
+                                        //input(type="hidden" name="notasus_camb" value="0")
+                                        div.col-sm-6
+                                            div.form-group.label-floating
+                                                label.control-label Inicio
+                                                h3.fechaini.form-control.otroc
+                                                input.form-control.otroc(name="notasus_ini" value='hola' style="display:none;")
+                                        div.col-sm-6
+                                            div.form-group.label-floating
+                                                label.control-label Fin
+                                                h3.fechaini.form-control.otroc.finn(segundo="0")
+                                                input.form-control.otroc(name="notasus_fin" value='hola' style="display:none;")
+
+                            div.col-sm-12(style="margin-top:10px;")
+                                div.alert.alert-danger.text-center(style="display:none;font-weight:bold;") Complete el Formulario (Falta los elementos de color rojo) !
+                        div.row
+                        div.footer.text-center
+                            input#vamosseme.btn.oscuro(type="submit" name="submit" value="ENVIAR")
+                            button.btn.btn-danger(type="button" data-dismiss="modal") Cancelar
+
+    //Modal ver alumno
+    div#myModal12.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content(style="border-radius: 0;")
+                div.modal-header.cabezamia
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2em;color:white") &times;
+                    div(style="background-image: url(/avatar/12.jpg);background-size: cover;background-position: center;height: 100px;width:100px;text-align: center;margin: -35px 0px;")
+                    h5.tiiq(style="    position: absolute;right: 40px;top: 13px;font-size: 1em;background: rgb(19, 75, 103);padding: 5px;padding-left: 10px;padding-right: 10px;border-radius: 40px;color: #ffffff;/*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);*/")
+                        //i.fa.fa-id(style="padding-right:5px;")
+                        x 1234567
+                div.modal-body
+                    h4#titutu_al.modal-title.text-center.uniq(style="font-weight:bold;font-size:1.5em") II Seminario Internacional de Trompeta y Trombón Yamaha
+                    div.row
+                        h5.jqwe(style="text-transform:none;font-size:1.1em;margin-bottom: 0px;text-align: center;font-weight: bold;color: #009688;") Información
+                        div.col-md-12.col-sm-12
+                            h5(style="text-transform:none;font-size:1.2em;margin-bottom: 10px;margin-top:5px;") Datos Personales
+                            div.col-md-6.col-sm-6           
+                                label(style="font-weight:bold;letter-spacing: -.05em;color:#666666") DNI 
+                                    h1.h1sintop jaja
+                            div.col-md-6.col-sm-6   
+                                label(style="font-weight:bold;letter-spacing: -.05em;color:#666666") Fecha Nacimiento 
+                                    h1.h1sintop jaja
+                            div.col-md-6.col-sm-6   
+                                label(style="font-weight:bold;letter-spacing: -.05em;color:#666666") Género 
+                                    h1.h1sintop jaja
+                            div.col-md-6.col-sm-6  
+                                label(style="font-weight:bold;letter-spacing: -.05em;color:#666666") Correo 
+                                    i.fa.fa-envelope(style="margin-left:2.5px;") 
+                                    h1.h1sintop jaja
+                        div.col-md-12.col-sm-12
+                            h5(style="text-transform:none;font-size:1.2em;margin-bottom: 10px;margin-top:5px;") Otros Datos
+                            div.col-md-6.col-sm-6           
+                                label(style="font-weight:bold;letter-spacing: -.05em;color:#666666") Fecha Creación 
+                                    h1.h1sintop jaja
+                            div.col-md-6.col-sm-6   
+                                label(style="font-weight:bold;letter-spacing: -.05em;color:#666666") Fecha Update 
+                                    h1.h1sintop jaja
+                        div.col-md-12.text-center
+                            h5.jqwe(style="text-transform:none;font-size:1.1em;margin-bottom: 0px;font-weight: bold;") Acciones
+                            a.btn.chart_btn(style="background-color: #607D8B;padding: 8px 10px;color: #FFFFFF;text-transform: capitalize;")
+                                i.fa.fa-line-chart
+                                x  Resumen Académico
+                        //div.col-md-12
+                            div.col-sm-12.text-center
+                                i.fa.fa-envelope
+                                br
+                                x(style="margin-left:5px;") jjj@hotmail.com
+                            div.col-md-12.minusq.text-center
+                                a.btn.btn-just-icon.btn-twitter(href="" target="_blank")
+                                    i.fa.fa-twitter
+                                a.btn.btn-just-icon.btn-facebook(href="" target="_blank")
+                                    i.fa.fa-facebook
+                                a.btn.btn-just-icon.btn-google(href="" target="_blank")
+                                    i.fa.fa-google
+                    div.row(style="display:none;margin-bottom:10px;")
+                        div.col-md-12
+                            div.hio(aria-hidden="true")
+                                a#attras_cha.jaja_round2(noajx="true")
+                                    i.fa.fa-arrow-left
+                            div#grafico_chart
+                    //div#preloader2(style="display:none;")
+                        div#loader2
+
+    //Modal nuevo alumno
+    div#myModal13.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2em;") &times;
+                    h4.modal-title.text-center.texto4 Agregar Alumno
+                div.modal-body
+                      form(method="post", action="/personal/" enctype="multipart/form-data")
+                        div.content
+                            div.row
+                                div.col-sm-3.col-xs-3
+                                        img#mostrar1.img-responsive(src='/avatar/hombre.png')
+                                div.file-field.input-field
+                                    div.btn1
+                                        span Foto
+                                        input#imagen(type="file" name="pho")
+                                    div.file-path-wrapper
+                                        input#nombrefil.file-path.validate(type="text")
+                                div.col-sm-12(style="margin-top:10px;")
+                                    div#alerta2.alert.alert-danger.text-center(style="display:none;font-weight:bold;") Error!! Archivo no válido
+                            br
+                            div.col-sm-6
+                                div.form-group.label-floating
+                                    label.control-label Nombres
+                                    input.form-control.otroc.valiz(name="nombre" value='hola')
+                            div.col-sm-6
+                                div.form-group.label-floating
+                                    label.control-label Apellido
+                                    input.form-control.otroc.valiz(name="apellido" value='hola')
+                            div.col-sm-12
+                                div.form-group
+                                    label.control-label(style="font-weight:bold;") Descripción
+                                    textarea.valiz.form-control.otroc(placeholder="Escriba la descripción" rows="4" name="historia" )
+                            div.col-sm-12(style="padding-left:0px;padding-right:0px;")
+                                div.col-sm-6
+                                    div.form-group.label-floating
+                                        label.control-label E-mail
+                                        input.form-control.otroc.valiz(name="ema" value='hola') 
+                                div.col-sm-6
+                                    div.form-group.label-floating
+                                        label.control-label Género
+                                    div.col-sm-6
+                                        p
+                                            input#test11(name="grupogenero" checked type="radio" value="0")
+                                            label(for="test11") Masculino
+                                    div.col-sm-6
+                                        p
+                                            input#test21(name="grupogenero" type="radio" value="1")
+                                            label(for="test21") Femenino
+                            div.row
+                            div.col-md-12
+                                h4 Datos Académicos
+                            div.col-sm-12
+                                div.form-group.label-floating
+                                    label.control-label Categoría
+                                div.col-sm-3
+                                    p
+                                        input#test110(name="optionsRadios" checked="true" type="radio" value="0")
+                                        label(for="test110") Piano
+                                div.col-sm-3
+                                    p
+                                        input#test210(name="optionsRadios" type="radio" value="1")
+                                        label(for="test210") Clarinete
+                                div.col-sm-3
+                                    p
+                                        input#test310(name="optionsRadios" type="radio" value="2")
+                                        label(for="test310") Violin
+                                div.col-sm-3
+                                    p
+                                        input#test410(name="optionsRadios" type="radio" value="3")
+                                        label(for="test410") S
+
+                            div.col-sm-12
+                                div.form-group.label-floating
+                                    label.control-label Redes Sociales
+                                div.col-sm-12
+                                    div.col-sm-4
+                                        div.form-group.label-floating
+                                            label.control-label Facebook
+                                            input.form-control.otroc.valiz(name="face" value='hola')
+                                    div.col-sm-4
+                                        div.form-group.label-floating
+                                            label.control-label Google +
+                                            input.form-control.otroc.valiz(name="goo" value='hola')
+                                    div.col-sm-4
+                                        div.form-group.label-floating
+                                            label.control-label Twiter
+                                            input.form-control.otroc.valiz(name="twwi" value='hola')
+                            div.col-sm-12(style="margin-top:10px;")
+                                div#alerta.alert.alert-danger.text-center(style="display:none;font-weight:bold;") Complete el Formulario (Falta los elementos de color rojo) !
+                                div#alertauser.alert.alert-danger.text-center(style="display:none;font-weight:bold;") ⚠ Error !! Usuario ya existe.
+                        div.footer.text-center
+                            input.btn.oscuro(type="submit" name="submit" value="ENVIAR")
+                            button.btn.btn-danger(type="button" data-dismiss="modal") Cancelar
+
+    div.main.main-raised.font_style0(style="margin-top:10px;")
+        div.container
+            div.row
+                block content
+    br
+    br
+    footer.footer
+        div.container
+            div.row
+                div.col-md-12.text-center
+                    x © 2017 Leandro Alviña. All rights reserved.
+            div.row
+                div.col-md-12.text-center
+                        a.btn.btn-just-icon.btn-twitter(href="" target="_blank")
+                            i.fa.fa-twitter
+                        a.btn.btn-just-icon.btn-facebook(href="" target="_blank")
+                            i.fa.fa-facebook
+                        a.btn.btn-just-icon.btn-google(href="" target="_blank")
+                            i.fa.fa-google
+    <script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+    <script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/javascripts/material.min.js" type="text/javascript"></script>
+    <script src="/javascripts/material-kit.js" type="text/javascript"></script>
+    <script src="/javascripts/materialize.js" type="text/javascript"></script>
+    <script src="/javascripts/list.min.js"></script>
+    <script src="/javascripts/mostarimage.js"></script>
+    <script type="text/javascript" src="/javascripts/obtendata2.js"></script>

@@ -1,0 +1,9 @@
+extends Adm
+block content
+  h1 #{personaje.nombre} #{personaje.apellidos}
+  textarea(name="historia", cols="50", rows="20", required="required") #{personaje}
+  div.col-md-4.col-sm-3.col-xs-6
+    img.img-responsive(src="/avatar/#{personaje.foto}")
+  div(style='white-space:pre;') #{personaje.biografia}
+  br
+  a(href="/personal") Volver atrás

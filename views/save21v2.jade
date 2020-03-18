@@ -1,0 +1,72 @@
+extends Adm
+block content
+  div.col-md-12
+    a.btn.btn-success(href="/personal")
+      x << Atras
+  div.modal-header
+    h4.modal-title.texto4.text-center Modificar #{personal.nombre} #{personal.apellidos}
+  div.modal-body
+      form(method="post", action="#{action}")
+        -if(put)
+          input(type="hidden", name="_method", value="PUT")
+        div.content
+            div.row
+                div.col-sm-6
+                    div.col-sm-8
+                        img#mostrar.img-responsive(src="/avatar/#{personal.foto}")
+                div.col-sm-6
+                    div.col-sm-12
+                        div.form-group.label-floating
+                                label.control-label Nombre
+                                input.form-control.otroc(name="nombre" required="required" value="#{personal.nombre}")
+                    div.col-sm-12
+                        div.form-group.label-floating
+                                label.control-label Apellidos
+                                input.form-control.otroc(name="apellido" required="required" value="#{personal.apellidos}")
+                    div.col-sm-12
+                        label.control-label Descripción
+                        textarea.form-control.otroc(placeholder="Escriba la descripción" rows="4" name="historia" required="required") #{personal.descri}
+                div#rarara.col-sm-12
+                    input#cual(type="hidden" value="#{personal.categoria}")
+                    div.col-sm-12
+                        h5 Categoria
+                    div.col-sm-3
+                        div.radio
+                            label
+                                input(type="radio" name="optionsRadios" value="0")
+                                x Piano
+                    div.col-sm-3
+                        div.radio
+                            label
+                                input(type="radio" name="optionsRadios" value="1")
+                                x Clarinete
+                    div.col-sm-3
+                        div.radio
+                            label
+                                input(type="radio" name="optionsRadios" value="2")
+                                x Violin
+                    div.col-sm-3
+                        div.radio
+                            label
+                                input(type="radio" name="optionsRadios" value="3")
+                                x S
+                div.col-sm-12
+                    div.col-sm-12
+                        h5 Redes Sociales
+                    div.col-sm-12
+                        div.col-sm-4
+                            div.form-group.label-floating
+                                label.control-label Facebook
+                                input.form-control.otroc(name="face" required="required", value="#{aux[0]}")
+                        div.col-sm-4
+                            div.form-group.label-floating
+                                label.control-label Google +
+                                input.form-control.otroc(name="goo" required="required", value="#{aux[1]}")
+                        div.col-sm-4
+                            div.form-group.label-floating
+                                label.control-label Twiter
+                                input.form-control.otroc(name="twwi"  required="required", value="#{aux[2]}")
+        div.footer.text-center
+            input.btn.oscuro(type="submit" value="Guardar")
+            a.btn.btn-danger(href="/personal") Cancelar
+    <script type="text/javascript" src="/javascripts/radios.js"></script>

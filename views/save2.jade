@@ -1,0 +1,55 @@
+extends Adm
+block content
+  h1 Guardar personaje1
+  form(method="post", action="#{action}" enctype="multipart/form-data")
+    -if(put)
+      input(type="hidden", name="_method", value="PUT")
+    -else
+      label Foto
+      br
+      input(type="file" name="photo")
+    br
+    label Nombre
+    br
+    input(type="text", name="nombre", required="required", value="#{personal.nombre}")
+    br
+    label Apellido
+    br
+    input(type="text", name="apellido", required="required", value="#{personal.apellidos}")
+    br
+    textarea(name="historia", cols="50", rows="20", required="required") #{personal.descri}
+    br
+    label Categoria
+        div.radio
+            label
+                input(type="radio" name="optionsRadios" checked="true" value="0")
+                Radio is off
+        div.radio
+            label
+                input(type="radio" name="optionsRadios" value="1")
+                Radio is on
+        div.radio
+            label
+                input(type="radio" name="optionsRadios" value="2")
+                Radio is off
+        div.radio
+            label
+                input(type="radio" name="optionsRadios" value="3")
+                Radio is off
+    br
+    label Redes Sociales
+        br
+        label Facebook
+        br
+        input(type="text", name="face", required="required", value="#{aux[0]}")
+        br
+        label Google +
+        br
+        input(type="text", name="goo", required="required", value="#{aux[1]}")
+        br
+        label Twiter
+        br
+        input(type="text", name="twwi", required="required", value="#{aux[2]}")
+    br
+    input(type="submit", value="Guardar")
+    a(href="/personal") Cancelar

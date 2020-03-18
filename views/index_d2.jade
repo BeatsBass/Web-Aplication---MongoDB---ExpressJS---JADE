@@ -1,0 +1,66 @@
+extends Prof
+block content
+  div#agregarevent.fixed-action-btn
+    a.btn-floating.btn-large.waves-effect.waves-light.red(data-toggle="modal" data-target="#myModal1")
+      i +
+  div.col-md-12
+    a.btn.btn-success(href="/admi")
+      x << Atras
+  div.col-md-12.col-xs-12
+    div.col-md-8.col-xs-8
+      h2 Eventos y Noticias
+  div.col-md-12(style="display:none;")
+      div#mensajeErrordoc.alert.alert-danger
+  br
+  br
+  br
+  div.container
+    div.row
+        div#users
+          div.col-md-12.col-xs-12
+           div.table-responsive
+            -if(documento.length > 0)
+              div.col-md-8
+                div.form-group.label-floating
+                  label.control-label Buscar Evento
+                  input.search.form-control.otroc(type="Buscar")
+              div.col-md-4.col-xs-12  
+                  button.btn.sort(data-sort="name" style="background:#607D8B") Por Tipo
+                  button.btn.sort(data-sort="born") Por Fecha 
+
+              table.table
+                thead
+                  tr
+                    th Imagen
+                    th.text-center #
+                    th Título 
+                    th Lugar
+                    th Fecha 
+                    th Tipo
+                    th.text-right Acción
+                tbody.list
+                  - for (var i = 0; i < documento.length; ++i) {
+                    tr
+                      -if(documento[i].tipo == 0)
+                        td
+                          img.modiimg(src="/eventos/#{documento[i].archivo.foto}" style="max-height:60px;cursor:pointer;" data-toggle="modal" data-target="#myModal200" jode="")
+                      -else
+                        td Noticia
+                      //jode="/persona/#{personal[i]._id}"
+                      td.text-center #{i+1}
+                      td.name #{documento[i].titu}
+                      td #{documento[i].cuando.lugar}
+                      td.born #{documento[i].cuando.fecha}
+                      -if(documento[i].tipo == 0)
+                        td Evento
+                      -else
+                        td Noticia
+                      td.td-actions.text-right
+                        a.verebenw.btn.btn-info.btn-simple.btn-xs(type="button" data-toggle="modal" data-target="#myModal2" dispow="#{documento[i].tipo}" descriw="#{documento[i].descri}" fechacr="#{documento[i].fecha_ini}" fechaup="#{documento[i].fecha_upd}") Ver
+                        a#Editar.btn.btn-success.btn-simple.btn-xs(type="button" eved ="#{documento[i]._id}") Editar
+                        form(method="post", action="" style="display: -webkit-inline-box;")
+                            input(type="hidden", name="_method", value="DELETE")
+                            a.btn.btn-danger.btn-simple.btn-xs(type="button" href="javascript:void(0);", onclick="if(confirm('¿Está seguro que desea eliminar este registro?')){this.parentNode.submit();}") Eliminar
+                  - }
+            -else
+              p#sineventos No hay documentos

@@ -1,0 +1,524 @@
+doctype html
+html
+  head
+    title= title
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/material-kit.css">
+    //<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/stylesheets/font-awesome2.min.css">
+    <link rel="stylesheet" href="/fonts/fontawesome-webfont.woff2">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/mar.css">
+    <script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+    <script src ="/javascripts/angular.min.js" type="text/javascript"></script>
+    <script src ="/javascripts/date.js" type="text/javascript"></script>
+  body
+    //div#index-banner.parallax-container.header-filter
+        div.row
+            nav.navbar.navbar-transparent(role="navigation" style="margin-bottom: 0px; z-index: 100;")
+                div.container
+                    div.navbar-header
+                        button.navbar-toggle(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+                            span.sr-only Toggle navigati
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                    div#bs-example-navbar-collapse-1.collapse.navbar-collapse
+                        ul.nav.navbar-nav.navbar-right(style="padding: 0px 20px;")
+                            li
+                                a.waves-effect.waves-teal(href="/admi")
+                                    i.fa.fa-circle-o 
+                                    x(style="text-transform:none;") Inicio
+                            li
+                                a#sett_user.waves-effect.waves-teal(data-toggle="modal" data-target="#myModal5" colores="#{user._id}")
+                                    i.fa.fa-cogs 
+                                    x(style="text-transform:none;") Configuración
+                            li
+                                a.waves-effect.waves-teal(href="/logout")
+                                    i.fa.fa-sign-out
+                                    x(style="text-transform:none;") Salir 
+                    div.chip(style="position: absolute;top: 9px;" )
+                        //a(style="color: rgba(0, 0, 0, 0.6);" href="#")
+                        //img#foto_user(src="avatar/#{user.local.foto}")
+                        div.holaqwd(style="background-image:url(avatar/#{user.local.foto});background-size:cover;background-position:center;")
+                        - var si = user.local.nombre.split("&&");
+                        - var final = si[0]+" "+si[1];
+                        x(style="text-transform: capitalize;") #{final}
+        div.section.no-pad-bot
+            div.container
+                br 
+                br
+                h1.header.center.teal-text.text-center 
+                    //i.fa.fa-mortar-board 
+                    x LEANDRO ALVIÑA MIRANDA
+                div.row.text-center
+                    h5.header.col.s12.ight.texto4 Docentes
+
+        div.parallax1
+            img.otxyz(src="/images/f6.png" ,alt="Unsplashed background img 1")
+    nav.navbar.navbar_miesti(role="navigation" style="margin-bottom: 0px; z-index: 100;")
+                div.container
+                    div.navbar-header
+                        button.navbar-toggle(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+                            span.sr-only Toggle navigati
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                    div#bs-example-navbar-collapse-1.collapse.navbar-collapse
+                        ul.nav.navbar-nav.navbar-right(style="padding: 0px 20px;")
+                            li
+                                a(style="cursor:pointer" href="/admi")
+                                    i.fa.fa-circle-o 
+                                    x(style="text-transform:none;") Inicio
+                            li
+                                a#sett_user(style="cursor:pointer" data-toggle="modal" data-target="#myModal5" colores="#{user._id}")
+                                    i.fa.fa-cogs 
+                                    x(style="text-transform:none;") Configuración
+                            li.dropdown
+                                a.dropdown-toggle(href="#" data-toggle="dropdown" style="text-transform:none;") Acciones  
+                                    b.caret
+                                ul.dropdown-menu
+                                  li.miqtt
+                                    a(href="/EveNoProf" style="padding-left: 10px;cursor:pointer")
+                                        x Eventos
+                            li
+                                a(style="cursor:pointer" href="/logout")
+                                    i.fa.fa-sign-out
+                                    //x(style="text-transform:none;") Salir 
+                    div.chip.card-raised(style="position: absolute;top: 9px;background:rgba(255,255,255,0.05)" )
+                        //a(style="color: rgba(0, 0, 0, 0.6);" href="#")
+                        //img(src="avatar/#{user.local.foto}")
+                        div.holaqwd(style="background-image:url(avatar/#{user.local.foto});background-size:cover;background-position:center;")
+                        - var si = user.local.nombre.split("&&");
+                        - var final = si[0]+" "+si[1];
+                        x(style="text-transform: capitalize;color:rgba(255,255,255,.9);") #{final}
+
+    //Modal para nuevo documento
+    div#myModal1.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div#conteeve.modal-content
+                div.modal-header
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2.5em;") &times;
+                    h4#titmodev.modal-title.text-center.texto4 Agregar Evento
+                div.modal-body
+                      div.app-container(style="display:none;" ng-app="dateTimeApp" ng-controller="dateTimeCtrl as ctrl" ng-cloak)
+                                    div.hio(aria-hidden="true")
+                                        a.atrras.jaja4
+                                            i.fa.fa-arrow-left
+                                    div(date-picker datepicker-title="Selecciona la Fecha" picktime="true" pickdate="true" pickpast="false" mondayfirst="false" custom-message="Elegiste" selecteddate="ctrl.selected_date" updatefn="ctrl.updateDate(newdate)")
+                                        div.datepicker.compact(ng-class="{'am': timeframe == 'am','pm': timeframe == 'pm','compact': compact}")
+                                            div.datepicker-header
+                                                div.datepicker-title(ng-if="datepicker_title") {{ datepickerTitle }}
+                                                div.datepicker-subheader {{ customMessage }} {{ selectedDay }} {{ localdate.getDate() }} {{monthNames[localdate.getMonth()] }} de {{ localdate.getFullYear() }}, a las {{ edittime.formatted }}
+                                                div#midato(jala="{{ localdate.getFullYear() }}-{{monthNames[localdate.getMonth()] }}-{{ localdate.getDate() }} {{ edittime.formatted }}")
+                                            div.datepicker-calendar
+                                                div.calendar-header
+                                                    div.goback(ng-click="moveBack()" ng-if="pickdate")
+                                                        svg(width="30" height="30")
+                                                            path(fill="none" stroke="#0DAD83" stroke-width="3" d="M19,6 l-9,9 l9,9")
+                                                    div.current-month-container {{ currentViewDate.getFullYear() }} {{ currentMonthName() }}
+                                                    div.goforward(ng-click="moveForward()" ng-if="pickdate")
+                                                        svg(width="30" height="30")
+                                                            path(fill="none" stroke="#0DAD83" stroke-width="3" d="M11,6 l9,9 l-9,9")
+                                                div.calendar-day-header
+                                                    span(ng-repeat="day in days" class="day-label") {{ day.short }})
+                                                div.calendar-grid(ng-class="{false: 'no-hover'}[pickdate]")
+                                                    div.datecontainer(ng-class="{'no-hover': !day.showday}" ng-repeat="day in month" ng-style="{'margin-left': calcOffset(day, $index)}" track by $index)
+                                                        div.datenumber(ng-class="{'day-selected': day.selected }" ng-click="selectDate(day)") {{ day.daydate }}
+                                            div.timepicker(ng-if="picktime == 'true'")
+                                                div(ng-class="{'am': timeframe == 'am', 'pm': timeframe == 'pm' }")
+                                                    div.timepicker-container-outer(selectedtime="time" timetravel)
+                                                        div.timepicker-container-inner
+                                                            div.timeline-container(ng-mousedown="timeSelectStart($event)" sm-touchstart="timeSelectStart($event)")
+                                                                div.current-time
+                                                                    div.actual-time {{ time }}
+                                                                div.timeline
+                                                                div.hours-container
+                                                                    div.hour-mark(ng-repeat="hour in getHours() track by $index")
+                                                            div.display-time
+                                                                div.decrement-time(ng-click="adjustTime('decrease')")
+                                                                    svg(width="24" height="24")
+                                                                        path(stroke="white" stroke-width="2" d="M8,12 h8")
+                                                                div.time(ng-class="{'time-active': edittime.active}")
+                                                                    input.time-input(type="text" ng-model="edittime.input" ng-keydown="changeInputTime($event)" ng-focus="edittime.active = true; edittime.digits = [];" ng-blur="edittime.active = false")
+                                                                    div.formatted-time {{ edittime.formatted }}
+                                                                div.increment-time(ng-click="adjustTime('increase')")
+                                                                    svg(width="24" height="24")
+                                                                        path(stroke="white" stroke-width="2" d="M12,7 v10 M7,12 h10")
+                                                            div.am-pm-container
+                                                                div.am-pm-button(ng-click="changetime('am');") am 
+                                                                div.am-pm-button(ng-click="changetime('pm');") pm 
+                                            
+                                            //div.buttons-container 
+                                                div.atrras.cancel-button CANCEL
+                                                div.save-button Guardar
+
+                      //Formulario para create
+                      form#prupruevent(method="post", action="/EveNoProf" enctype="multipart/form-data")
+                        div.content
+                            div.row
+                                div.col-sm-12(style="padding-left:0px;padding-right:0px;")
+                                    div.col-sm-12
+                                        h5 Tipo
+                                    div.col-xs-6
+                                        p
+                                            input#test1(name="group1" checked type="radio" value="0")
+                                            label(for="test1") Evento
+                                    div.col-xs-6
+                                        p
+                                            input#test2(name="group1" type="radio" value="1")
+                                            label(for="test2") Noticia
+                                    input#conffo(name="confoto" value="0" style="display:none;")
+                            div#imaeve.row
+                                div.col-sm-12
+                                    h5 Imagen del Evento
+                                div.col-sm-3.col-xs-3
+                                        img#mostrarimg.img-responsive(src='/eventos/fotoe.png')
+
+                                div.file-field.input-field
+                                    div.btn1
+                                        span File
+                                        input#imagen(type="file" name="photos")
+                                    div.file-path-wrapper
+                                        input.file-path.validate(type="text")
+
+                                div.col-sm-12(style="margin-top:10px;")
+                                        div#alerta.alert.alert-danger.text-center(style="display:none;font-weight:bold;") Error, Solo puede enviar imagen!
+                            div.row
+                                div.col-sm-12
+                                    h5 Adjuntar Archivo
+                                div#bb2.col-md-12
+                                 span#mosmas.btn(style="    border-radius: 100%;height: 40px;width: 40px;padding: 0px;padding-top: 4px;padding-left: 2px;font-size: 22px;font-weight: 900;background:#607D8B") + 
+                                 label(style="margin-left: 10px;")  Agregar un archivo
+                                 //div#masdoc.file-field.input-field(style="display:none;")
+                                    div.btn1
+                                        span File
+                                        input#imagendocc(type="file" name="photos")
+                                    div.file-path-wrapper
+                                        input.file-path.validate(type="text")
+                                div#fechhha.col-sm-12
+                                    h5 Fecha y Lugar
+                                    div.col-sm-6
+                                        div.form-group.label-floating
+                                            label.control-label(style="font-weight:bold;") Dirección
+                                            input.valiz.form-control.otroc(name="direccion" value="")
+                                    div.col-sm-6
+                                         div.form-group.label-floating.is-focused
+                                            label.control-label(style="font-weight:bold;") Fecha
+                                            h3#lalaf.form-control.otroc(name="fecha")
+                                            input.valiz.tufec(name="fechhha" value="" style="display:none;")
+                                            //div#lalaf1.btn.facebook fecha
+                                div#inforev.col-sm-12
+                                    h5(style="margin-bottom:0px;") Información
+                                    div.col-sm-12
+                                        div.form-group.label-floating
+                                            label.control-label(style="font-weight:bold;") Título
+                                            input.valiz.form-control.otroc(name="titulo" value="")
+                                    div.col-sm-12
+                                        div.form-group
+                                            label.control-label(style="font-weight:bold;") Descripción
+                                            textarea.valiz.form-control.otroc(placeholder="Escriba la descripción" rows="4" name="descrii") descri
+                                div.col-sm-12(style="margin-top:10px;")
+                                    div#alerta2.alert.alert-danger.text-center(style="display:none;font-weight:bold;") Complete el Formulario (Falta los elementos de color rojo) !
+                                div.col-sm-12(style="margin-top:10px;")
+                                    div#alerta4.alert.alert-danger.text-center(style="display:none;font-weight:bold;") ERROR, Adjuto vacio. Agrege un archivo o Elimine el archivo ADJUNTO !
+                                div.col-sm-12
+                                    div#alerta3.alert.alert-warning.text-center(style="display:none;font-weight:bold;") Esta creando evento sin Imagen, se guardará con imagen predeterminada
+                        div.footer.text-center
+                            input#filtro1.btn(type="submit" name="submit" value="ENVIAR" style="background-color:#009688;")
+                            button.btn.btn-danger(type="button" data-dismiss="modal") Cancelar
+                      
+                      //Formulario para el update
+                      form#editat(method="post", action="/EveNoProf/" style="display:none;" deedit="0")
+                        input(type="hidden", name="_method", value="PUT")
+                        div.content
+                            div.row
+                                div.col-sm-12
+                                    div.alert.alert-success.text-center(style="font-weight:bold;") Para Modificar imagen o adjunto, haga click en la foto.
+                                div.col-sm-12
+                                    h5 Fecha y Lugar
+                                    div.col-sm-6
+                                        div.form-group.label-floating
+                                            label.control-label(style="font-weight:bold;") Dirección
+                                            input.valiz.form-control.otroc(name="direccion" value="h")
+                                    div.col-sm-6
+                                         div.form-group.label-floating.is-focused
+                                            label.control-label(style="font-weight:bold;") Fecha
+                                            h3#lalaf1.form-control.otroc(name="fecha")
+                                            input.valiz.tufec1(name="fechhha" value="" style="display:none;")
+                                div.col-sm-12
+                                    h5(style="margin-bottom:0px;") Información
+                                    div.col-sm-12
+                                        div.form-group.label-floating
+                                            label.control-label(style="font-weight:bold;") Título
+                                            input.valiz.form-control.otroc(name="titulo" value="hy")
+                                    div.col-sm-12
+                                        div.form-group
+                                            label.control-label(style="font-weight:bold;") Descripción
+                                            textarea.valiz.form-control.otroc.juio(placeholder="Escriba la descripción" rows="6" name="descrii") descri
+                                div.col-sm-12(style="margin-top:10px;")
+                                    div#alerta11.alert.alert-danger.text-center(style="display:none;font-weight:bold;") Complete el Formulario (Falta los elementos de color rojo) !
+
+                        div.footer.text-center
+                            input#editevw.btn(type="submit" name="submit" value="Guardar" style="background-color:#009688;")
+                            button.btn.btn-danger(type="button" data-dismiss="modal") Cancelar
+
+    //Modal Ver documento
+    div#myModal2.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2.5em;") &times;
+                    h4(style="color:white;top: 18px;position: absolute;")
+                        i.fa.fa-circle(style="font-size:13px;padding-right:4px;") 
+                        x.textow (Disponible)
+                    div(style="background-image: url(/eventos/fotoe.png);background-size: cover;background-position: center;height: 80px;width:80px;text-align: center;float: right;margin: -25px 24px;")
+                div.modal-body
+                    h4.modal-title.text-center.texto4 II Seminario Internacional de Trompeta y Trombón Yamaha
+                    div.row
+                        div.col-sm-12.luggaw
+                            h5 Fecha y Lugar
+                            div.col-sm-6
+                                div.form-group.label-floating
+                                    label.control-label(style="font-weight:bold;") Lugar
+                                    label.otroc dire
+                            div.col-sm-6
+                                
+                                    label.control-label(style="font-weight:bold;") Fecha
+                                    label.otroc #{new Date()}
+                        div.col-sm-12
+                            h5(style="margin-bottom:0px;") Información
+                            div.col-sm-12
+                                div.form-group(style="margin-top:10px;")
+                                    label.control-label(style="font-weight:bold;") Descripción
+                                    p.descrtw Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            div.col-sm-6.fecw0
+                                div.form-group.label-floating
+                                    label.control-label(style="font-weight:bold;") Fecha de Creación
+                                    label.otroc itu
+                            div.col-sm-6.fecw0
+                                div.form-group.label-floating
+                                    label.control-label(style="font-weight:bold;") Fecha de Actualizacion
+                                    label.otroc itu
+                        div.col-sm-12
+                                    div#finaleve.alert.alert-danger.text-center(style="display:none;font-weight:bold;") Esta creando evento sin Imagen, se guardará con imagen predetermina
+                                    div#faltaleve.alert.alert-success.text-center(style="display:none;font-weight:bold;") Esta creando evento sin Imagen, se guardará con imagen predetermina
+                div.modal-footer
+                    button.btn.btn-info.btn-simple(type="button" data-dismiss="modal") Cerrar
+    
+    //Modal Ver Imagen/Adjunto y update
+    div#myModal3.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2.5em;") &times;
+                    h4.modal-title.texto4.text-center Modificar Archivos
+                        br
+                        h5.text-center(style="color:rgba(60, 72, 88, 0.73);")
+                div.modal-body
+                    form#editfilew(method="post", action="" enctype="multipart/form-data")
+                        div.content
+                            input(name="confoto" value="0" style="display:none;")
+                            input(name="conadjunto" value="0" style="display:none;")  
+                            input(name="esnoti" value="0" style="display:none;")
+                            input(name="tipoqw" value="0" style="display:none;")
+                            input(name='filesqw' value="0" style="display:none;")
+                            div.row
+                                div.col-sm-12
+                                    div.col-sm-10.col-sm-offset-1
+                                        img#imashow.img-responsive.showimg(src='/avatar/12.jpg')
+                            br
+                            div.row
+                                div#nuevodocumento.col-sm-12
+                                    div.file-field.input-field
+                                        div.btn1
+                                            span Foto
+                                            input#photow(type="file" name="photo")
+                                        div.file-path-wrapper
+                                            input.file-path.validate(type="text")
+                                div.col-sm-12(style="margin-top:10px;")
+                                    div#alertaw.alert.alert-danger.text-center(style="display:none;font-weight:bold;") Error, Solo puede enviar imagen!
+                            div.row
+                                div.col-sm-12
+                                    h5 Modificar Adjunto
+                                div.col-xs-12.text-center
+                                    a#adjuntow.btn.btn-simple(target='_blank') Ver Adjunto
+                                div.col-sm-12
+                                    div.file-field.input-field
+                                        div.btn1
+                                            span File
+                                            input#photow1(type='file' name='photo')
+                                        div#paadjuntoq.file-path-wrapper
+                                            input.file-path.validate(type='text')
+                            div.row
+                                div.col-sm-12
+                                    h5 Adjuntar Archivo
+                                div#bb2w.col-md-12
+                                 span#unomasw.btn(style="border-radius: 100%;height: 40px;width: 40px;padding: 0px;padding-top: 4px;padding-left: 2px;font-size: 22px;font-weight: 900;background:#607D8B") + 
+                                 label(style="margin-left: 10px;")  Agregar un archivo
+                                div.col-sm-12(style="margin-top:10px;")
+                                    div#alertadjw.alert.alert-danger.text-center(style="display:none;font-weight:bold;") ERROR, Adjuto vacio. Agrege un archivo o Elimine el archivo ADJUNTO !
+                        br
+                        div.footer.text-center
+                            input#filtrow.btn.oscuro(type="submit" name="submit" value="Guardar")
+                            button.btn.btn-danger(type="button" data-dismiss="modal") Cancelar
+    
+    //Modal más días Noticia
+    div#myModal4.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2.5em;") &times;
+                    h4(style="color:white;top: 18px;position: absolute;")
+                        i.fa.fa-circle(style="font-size:13px;padding-right:4px;") 
+                        x.textow (Disponible)
+                    div(style="background-image: url(/eventos/foton.png);background-size: cover;background-position: center;height: 80px;width:80px;text-align: center;float: right;margin: -25px 24px;")
+                div.modal-body
+                    h4.modal-title.text-center.texto4 II Seminario Internacional de Trompeta y Trombón Yamaha
+                    div.row
+                        div.col-sm-12
+                            div.alert.alert-danger.text-center(style="display:none;margin-bottom:5px;margin-top: 20px;") No puede agregar más días, la noticia está aún vigente.
+                            div.alert.alert-success.text-center(style="display:none;background:#263238") Esta creando evento sin Imagen, se guardará con imagen predetermina
+                    form#masdias(method="post", action="" style="display:none;")
+                        div.content
+                            h5.small.text-center Si envia el formulario, se agrega 7 días más de vigencia a la noticia.
+                        div.footer.text-center
+                            input.btn.oscuro(type="submit" name="submit" value="enviar")
+                            button.btn.btn-danger(type="button" data-dismiss="modal") Cancelar
+                //div.modal-footer
+                    button.btn.btn-info.btn-simple(type="button" data-dismiss="modal") Cerrar
+    
+    //Modal config
+    div#myModal5.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        div.modal-dialog.modal-sm
+            div.modal-content
+                div.modal-body
+                    //button.close(type="button" data-dismiss="modal" aria-hidden="true" style="font-size:2.5em; color:#E91E63;") &times;
+                    div#edituser.waves-effect.atraqw(style="font-size: 1.7em;color: #E91E63;transform: translateX(-9px);padding: 6px 8px;")
+                        i.fa.fa-edit
+                    div.waves-effect(data-dismiss="modal" aria-hidden="true" style="transform: translateX(2px);float: right;font-size: 2em;color: #E91E63;")
+                        i.fa.fa-close
+                    div#cardqw-info.row
+                        div.col-sm-12
+                            div#imgset.col-sm-8.col-sm-offset-2.profile-card
+                                img.img-responsive.showimg(src='avatar/#{user.local.foto}' style="display:none;")
+                                div.imagen_cover2(style="background-image:url(avatar/#{user.local.foto})")
+                            div.col-sm-12.text-center
+                                h5.nombreedit #{final}
+                                    h4.small #{user.local.email}
+                            div.col-sm-12.text-center
+                                i.fa.fa-envelope-open
+                                x(style="margin-left:5px;").small.correoqw 
+                            div.col-sm-12.text-center.redess
+                                a.btn.btn-just-icon.btn-facebook(href="" target="_blank")
+                                    i.fa.fa-facebook
+                                a.btn.btn-just-icon.btn-google(href="" target="_blank")
+                                    i.fa.fa-google
+                                a.btn.btn-just-icon.btn-twitter(href="" target="_blank")
+                                    i.fa.fa-twitter
+                            div#keyset.col-sm-12.text-center
+                                div.waves-effect(style="font-size: 1.7em;color: #E91E63;padding: 6px 8px;")
+                                    i.fa.fa-key
+                    form#cambioqw(method="post", action="/cambioer/#{user._id}" enctype="multipart/form-data" style="display:none;")
+                        input#cuslqw(name="cualcu" value="0" style="display:none;")
+                        div.content
+                            div.row
+                                div.col-sm-12.fotoqw(style="margin-bottom:25px;")
+                                    div.col-sm-10.col-sm-offset-1
+                                        img#cbimgqw.img-responsive.showimg(src='/avatar/12.jpg')
+                                div.col-sm-12.fotoqw
+                                    div.file-field.input-field
+                                        div.btn1
+                                            span Foto
+                                            input#setimg(type="file" name="phot")
+                                        div.file-path-wrapper
+                                            input#imgtextqw.file-path.validate(type="text" style="color:white;")
+                                div.col-sm-12(style="margin-top:10px;")
+                                    div#alertaimgg.alert.alert-danger.text-center(style="display:none;font-weight:bold;") Error, Solo puede enviar imagen!
+                                div.col-sm-12.infoqw
+                                    h5.text-center(style="margin-bottom:0px;") Datos Personales
+                                    div.col-sm-4
+                                        div.form-group.label-floating
+                                            label.control-label Nombres
+                                            input.valiqw.form-control.otroc(name="nombre" value="#{si[0]}")
+                                    div.col-sm-4
+                                        div.form-group.label-floating
+                                            label.control-label Apellidos
+                                            input.valiqw.form-control.otroc(name="apellido" value="#{si[1]}")
+                                    div.col-sm-4
+                                        div.form-group.label-floating
+                                            label.control-label E-mail
+                                            input#emama.valiqw.form-control.otroc(name="emaxyz" value="hola")
+                                    h5.text-center(style="margin-bottom:0px;") Redes Sociales
+                                    div.col-sm-4
+                                        div.input-group.form-group.label-floating
+                                            label.control-label(style="transform: translateX(22px);") Facebook
+                                            span.input-group-addon(style="padding-left: 0px;color:#3b5998;transform: translateY(-7px);")
+                                                i.fa.fa-facebook
+                                            input.valiqw.form-control.redesqw(name="faccqw" type="text"   value="w")
+                                    div.col-sm-4
+                                        div.input-group.form-group.label-floating
+                                            label.control-label(style="transform: translateX(21px);") Google +
+                                            span.input-group-addon(style="padding-left: 0px;color:#dd4b39;transform: translateY(-7px);")
+                                                i.fa.fa-google-plus
+                                            input.valiqw.form-control.redesqw(name="gooqw" type="text" value="w")
+                                    div.col-sm-4
+                                        div.input-group.form-group.label-floating
+                                            label.control-label(style="transform: translateX(27px);") Twitter
+                                            span.input-group-addon(style="padding-left: 0px;color:#55acee;transform: translateY(-7px);")
+                                                i.fa.fa-twitter
+                                            input.valiqw.form-control.redesqw(name="twttqw" type="text" value="w")
+                                    div.col-sm-12
+                                        div#alertawer.alert.alert-danger.text-center(style="display:none;font-weight:bold;") Complete el Formulario (Falta los elementos de color rojo) !
+                                div.col-sm-12.contraqw
+                                    h5.text-center(style="margin-bottom:0px;") Cambiar Contraseña
+                                    div.col-sm-12
+                                        div.form-group.label-floating
+                                            label.control-label Antigua Contraseña
+                                            input.valipassw.form-control.otroc(type="password" name="contra" value="")
+                                    div.col-sm-12
+                                        div.form-group.label-floating
+                                            label.control-label Nueva Contraseña
+                                            input.valipassw.form-control.otroc(type="password" name="contranew" value="")
+                                    div.col-sm-12
+                                        div.form-group.label-floating
+                                            label.control-label Repetir Nueva Contraseña
+                                            input.valipassw.form-control.otroc(type="password" name="titulo" value="")
+                                    div.col-sm-12
+                                        div#alertapass.alert.alert-danger.text-center(style="display:none;margin-bottom:0px;")
+                                            i.fa.fa-exclamation-triangle(style="font-size: 1.3em;margin-right: 5px;")
+                                            x Complete el Formulario !
+                        br
+                        div.footer.text-center
+                            input#filtroimgqw.btn.oscuro.btn-sm.btn-round(type="submit" name="submit" value="Guardar" style="font-size:12px;")
+                            button.btn.btn-danger.btn-sm.btn-round(type="button" data-dismiss="modal") Cancelar
+
+    div.main.main-raised(style="margin-top:10px;")
+        div.container
+            div.row 
+                block content
+    br
+    br
+    footer.footer
+        div.container
+            div.row
+                div.col-md-12.text-center
+                    x © 2017 Leandro Alviña. All rights reserved.
+            div.row
+                div.col-md-12.text-center
+                        a.btn.btn-just-icon.btn-twitter(href="" target="_blank")
+                            i.fa.fa-twitter
+                        a.btn.btn-just-icon.btn-facebook(href="" target="_blank")
+                            i.fa.fa-facebook
+                        a.btn.btn-just-icon.btn-google(href="" target="_blank")
+                            i.fa.fa-google
+    <script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+    <script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/javascripts/material.min.js" type="text/javascript"></script>
+    <script src="/javascripts/material-kit.js" type="text/javascript"></script>
+    <script src="/javascripts/materialize.js" type="text/javascript"></script>
+    <script src="/javascripts/list.min.js"></script>
+    <script type="text/javascript" src="/javascripts/mostarimage2.js"></script>
+    <script type="text/javascript" src="/javascripts/obtendata3.js"></script>
